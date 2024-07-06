@@ -104,8 +104,6 @@
     "@ulld/logger": "0.0.1"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:^",
-    "@repo/jest-presets": "workspace:*",
     "@shikijs/rehype": "^1.5.2",
     "@shikijs/transformers": "^1.6.4",
     "@shikijs/twoslash": "^1.5.2",
