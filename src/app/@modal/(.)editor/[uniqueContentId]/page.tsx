@@ -3,6 +3,7 @@ import EditorModalPage from "#/corePages/modal/editor";
 import { MonacoPageParams } from "@ulld/editor/editorTypes";
 import React from "react";
 
+
 interface EditorModalPageTemplateProps extends MonacoPageParams { }
 
 const EditorModalPageTemplate = (props: EditorModalPageTemplateProps) => {

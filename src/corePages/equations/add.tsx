@@ -1,6 +1,4 @@
-// Slot: equations/AddEquationPage type:page
-
-
+// Slot: equations/AddEquationPage type:page propsExtends:AddEquationsPageProps
 import React from 'react'
 
 

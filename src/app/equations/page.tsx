@@ -1,19 +1,13 @@
-import React from 'react'
+import EquationsPage from "#/corePages/equations/list";
+import React from "react";
 
-
-
-interface EquationsPageTemplateProps {
-
-}
+/* TODO: Extend type with EquationsPageProps */
+interface EquationsPageTemplateProps { }
 
 const EquationsPageTemplate = (props: EquationsPageTemplateProps) => {
-return (
-    <div></div>
-)
-}
+    return <EquationsPage {...props} />;
+};
 
-
-EquationsPageTemplate.displayName = "EquationsPageTemplate"
-
+EquationsPageTemplate.displayName = "EquationsPageTemplate";
 
 export default EquationsPageTemplate;

@@ -1,4 +1,4 @@
-// Slot: equations/EquationDetailsPage type:page
+// Slot: equations/EquationDetailsPage type:page propsExtends:EquationDetailModalPageProps
 import React from 'react'
 
 
