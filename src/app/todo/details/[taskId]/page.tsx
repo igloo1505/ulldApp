@@ -5,16 +5,16 @@ import { todoTaskSchema } from "@ulld/parsers/plugins/todos";
 import { redirect } from "next/navigation";
 import React from "react";
 
-interface TaskDetailsModalPageProps {
+interface TaskDetailsPageProps {
     params: {
         taskId: string;
     };
 }
 
 
-const TaskDetailsModalPage = async ({
+const TaskDetailsPage = async ({
     params: { taskId },
-}: TaskDetailsModalPageProps) => {
+}: TaskDetailsPageProps) => {
     let t = await serverClient.toDo.getToDoDetails({
         toDoId: typeof taskId === "string" ? parseInt(taskId) : taskId,
     });
@@ -23,11 +23,11 @@ const TaskDetailsModalPage = async ({
     const task = await todoTaskSchema.parseAsync(t)
 
     return <TaskManagerTaskDetails
-        isModal={true}
+        isModal={false}
         task={task}
     />;
 };
 
-TaskDetailsModalPage.displayName = "TaskDetailsModalPage";
+TaskDetailsPage.displayName = "TaskDetailsPage";
 
-export default TaskDetailsModalPage;
+export default TaskDetailsPage;

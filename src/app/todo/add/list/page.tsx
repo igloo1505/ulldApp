@@ -3,11 +3,10 @@ import AddTaskList from "#/components/slots/taskManager/addList";
 import { serverClient } from "#/trpc/mainServer";
 import React from "react";
 
-interface AddTaskListPageTemplateProps { }
 
-const AddTaskListPageTemplate = async (props: AddTaskListPageTemplateProps) => {
+const AddTaskListPageTemplate = async () => {
     const uniqueTaggables = await serverClient.search.getUniqueTagTopicAndSubjects()
-    return <AddTaskList existingTaggables={uniqueTaggables} isModal />;
+    return <AddTaskList existingTaggables={uniqueTaggables} isModal={false} />;
 };
 
 AddTaskListPageTemplate.displayName = "AddTaskListPageTemplate";

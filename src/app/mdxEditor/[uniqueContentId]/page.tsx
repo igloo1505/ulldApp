@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import MdxEditorPage, { PageProps } from "#/corePages/editor/mdxEditor";
 import React from "react";
 

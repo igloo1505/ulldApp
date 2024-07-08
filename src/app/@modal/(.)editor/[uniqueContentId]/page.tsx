@@ -1,3 +1,4 @@
+// ULLD: protected-path
 "use client";
 import EditorModalPage from "#/corePages/modal/editor";
 import { MonacoPageParams } from "@ulld/editor/editorTypes";

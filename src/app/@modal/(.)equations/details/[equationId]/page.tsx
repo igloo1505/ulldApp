@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import EquationDetailsModalPage from '#/corePages/modal/equationDetails';
 import React from 'react'
 

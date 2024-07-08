@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import EditorPage, { PageProps } from "#/corePages/editor/editor";
 import React from "react";
 

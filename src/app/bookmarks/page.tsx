@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 import type { SearchAllParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams";
 import {NoteFilter} from "@ulld/api/classes/search/noteFilter"

@@ -1,4 +1,4 @@
-// Slot: editor/LatexEditorPage type:page propsExtends:EditorPageContentProps
+// ULLD: protected-path
 import LatexEditor, { PageProps } from "#/corePages/editor/latexEditor";
 import React from "react";
 

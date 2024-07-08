@@ -1,24 +1,18 @@
 // Slot: task-manager/TaskDetails type:component propsExtends:TaskDetailsPageProps
-import { todoTaskSchema } from '@ulld/parsers/plugins/todos'
-import React from 'react'
-import {z} from 'zod'
+import { TodoTaskOutput } from "@ulld/parsers/plugins/todos";
+import React from "react";
 
 
 /* TODO: Extend this properly. */
 interface TaskManagerTaskDetailsProps {
-   isModal: boolean
-    task: z.output<typeof todoTaskSchema>
+    isModal: boolean;
+    task: TodoTaskOutput;
 }
 
 const TaskManagerTaskDetails = (props: TaskManagerTaskDetailsProps) => {
-return (
-    <div></div>
-)
-}
+    return <div></div>;
+};
 
-
-TaskManagerTaskDetails.displayName = "TaskManagerTaskDetails"
-
+TaskManagerTaskDetails.displayName = "TaskManagerTaskDetails";
 
 export default TaskManagerTaskDetails;
-

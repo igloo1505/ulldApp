@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import BibliographyPage, {
     PageProps,
 } from "#/corePages/bibliography/bibliography";

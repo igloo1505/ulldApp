@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import AddEquationPage from '#/corePages/equations/add';
 import { AddEquationPageTemplateProps } from '#/types/corePageProps';
 import React from 'react'

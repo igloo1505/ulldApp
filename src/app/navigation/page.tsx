@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import FullScreenNavigationMenu from '#/components/slots/navigation/fullScreenNavigationMenu';
 import React from 'react'
 

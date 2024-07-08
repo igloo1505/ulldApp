@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import EquationsPage from "#/corePages/equations/list";
 import React from "react";
 
