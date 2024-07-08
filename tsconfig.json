@@ -44,6 +44,9 @@
         "paths": {
             "#/*": [
                 "./src/*"
+            ],
+            "buildData": [
+                "./src/ulldBuildData.json"
             ]
         },
         "incremental": true
