@@ -1,11 +1,10 @@
 // Slot: UI/SearchResultsPage type:page propsExtends:SearchResultsPageProps
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 /* TODO: Extend properly */
 interface SearchResultsPageProps {
-    notes: any
-    tasks: any
-    equations: any
+    notes: ReactNode
+    taskLists: ReactNode
 }
 
 
