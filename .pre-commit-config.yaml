@@ -7,6 +7,13 @@ repos:
       - id: detect-private-key
   - repo: local
     hooks:
+      - id: setInternalDepsRemoteSource
+        name: setInternalDepsRemoteSource
+        entry: \./\.commitHooks/setInternalDepsRemoteSource.zsh
+        files: package.json
+        language: script
+        stages: [pre-commit]
+        always_run: true
       - id: setInternalDepsLocalSource
         name: setInternalDepsLocalSource
         entry: \./\.commitHooks/setInternalDepsLocalSource.zsh
