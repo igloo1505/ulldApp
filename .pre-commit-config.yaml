@@ -16,7 +16,7 @@ repos:
         always_run: true
       - id: setInternapDepsLocalSource
         name: setInternalDepsLocalSource
-        entry: \./\.commitHooks/setInternapDepsLocalSource.zsh
+        entry: \./\.commitHooks/setInternalDepsLocalSource.zsh
         files: package.json
         language: script
         stages: [post-commit, post-checkout]
