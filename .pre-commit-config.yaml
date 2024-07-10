@@ -9,13 +9,15 @@ repos:
     hooks:
       - id: setInternalDepsRemoteSource
         name: setInternalDepsRemoteSource
-        entry: \./commitHooks/setInternalDepsRemoteSource
+        entry: \./\.commitHooks/setInternalDepsRemoteSource.zsh
         files: package.json
-        language: system
+        language: script
         stages: [pre-commit]
+        always_run: true
       - id: setInternapDepsLocalSource
         name: setInternalDepsRemoteSource
-        entry: \.commitHooks/setInternapDepsLocalSource.zsh
+        entry: \./\.commitHooks/setInternapDepsLocalSource.zsh
         files: package.json
-        language: system
+        language: script
         stages: [post-commit]
+        always_run: true
