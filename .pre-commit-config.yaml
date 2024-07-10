@@ -1,0 +1,21 @@
+exclude: node_modules
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-json
+      - id: detect-private-key
+  - repo: local
+    hooks:
+      - id: setInternalDepsRemoteSource
+        name: setInternalDepsRemoteSource
+        entry: \./commitHooks/setInternalDepsRemoteSource
+        files: package.json
+        language: system
+        stages: [pre-commit]
+      - id: setInternapDepsLocalSource
+        name: setInternalDepsRemoteSource
+        entry: \.commitHooks/setInternapDepsLocalSource.zsh
+        files: package.json
+        language: system
+        stages: [post-commit]
