@@ -1,21 +1,12 @@
 // Slot: editor/LatexEditorPage type:page propsExtends:EditorPageContentProps
-import React from 'react'
+import React from "react";
+import { EditorPageContentProps } from "@ulld/utilities/corePageProps";
+import REPLACEME from "#/components/REPLACEMEcomponent";
 
+const LatexEditor = (props: EditorPageContentProps) => {
+    return <REPLACEME {...props} />
+};
 
-/* TODO: Extend this properly */
-export interface PageProps {
-
-}
-
-
-const LatexEditor = (props: PageProps) => {
-return (
-    <div></div>
-)
-}
-
-
-LatexEditor.displayName = "LatexEditor"
-
+LatexEditor.displayName = "LatexEditor";
 
 export default LatexEditor;

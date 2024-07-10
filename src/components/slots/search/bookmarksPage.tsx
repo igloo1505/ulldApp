@@ -1,14 +1,12 @@
 // Slot: UI/BookmarksPage type:page propsExtends:BookmarksResultsPageProps
+import REPLACEME from '#/components/REPLACEMEcomponent';
+import { BookmarksResultsPageProps } from '@ulld/ui/types';
 import React from 'react'
 
-/* TODO: Extend this properly */
-interface BookmarkResultsPageProps {
-    notes: any
-}
 
-const BookmarkResultsPage = (props: BookmarkResultsPageProps) => {
+const BookmarkResultsPage = (props: BookmarksResultsPageProps) => {
 return (
-    <div></div>
+    <REPLACEME {...props} />
 )
 }
 

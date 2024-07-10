@@ -1,12 +1,13 @@
 // Slot: UI/NotesSearchResultsList type:component propsExtends:NotesSearchResultsListProps
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { NotesSearchResultsListProps } from "@ulld/ui/types";
 import React from "react";
 
-interface NotesSearchResultsListComponentProps { }
 
 const NotesSearchResultsListComponent = (
-    props: NotesSearchResultsListComponentProps,
+    props: NotesSearchResultsListProps,
 ) => {
-    return <div></div>;
+    return <REPLACEME {...props} />
 };
 
 NotesSearchResultsListComponent.displayName = "NotesSearchResultsListComponent";

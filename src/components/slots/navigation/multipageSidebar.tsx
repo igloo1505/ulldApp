@@ -1,19 +1,13 @@
 // Slot: navigation/MultiPageSidebar type:component propsExtends:MultipageSidebarProps
-import React from 'react'
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { MultipageSidebarProps } from "@ulld/navigation/types";
+import React from "react";
 
-/* TODO: Extend this properly */
-interface MultipageSidebarProps {
-   items: any
-}
 
 const MultipageSidebar = (props: MultipageSidebarProps) => {
-return (
-    <div></div>
-)
-}
+    return <REPLACEME {...props} />;
+};
 
-
-MultipageSidebar.displayName = "MultipageSidebar"
-
+MultipageSidebar.displayName = "MultipageSidebar";
 
 export default MultipageSidebar;

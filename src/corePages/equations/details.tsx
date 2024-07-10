@@ -1,15 +1,11 @@
 // Slot: equations/EquationDetailsPage type:page propsExtends:EquationDetailModalPageProps
+import REPLACEME from '#/components/REPLACEMEcomponent';
+import { EquationDetailModalPageProps } from '@ulld/utilities/corePageProps';
 import React from 'react'
 
-
-
-interface EquationDetailsPageProps {
-
-}
-
-const EquationDetailsPage = (props: EquationDetailsPageProps) => {
+const EquationDetailsPage = (props: EquationDetailModalPageProps) => {
 return (
-    <div></div>
+    <REPLACEME {...props} />
 )
 }
 

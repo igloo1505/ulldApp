@@ -1,16 +1,11 @@
 // Slot: UI/Pagination type:component propsExtends:PaginationProps
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { PaginationProps } from "@ulld/ui/types";
 import React from "react";
 
-/* TODO: Extend properly */
-interface PaginationGroupProps { 
-    totalItems: number
-    itemsPerPage: number
-    currentPage: number
-    hrefTemplate: string
-}
 
-const PaginationGroup = (props: PaginationGroupProps) => {
-    return <div></div>;
+const PaginationGroup = (props: PaginationProps) => {
+    return <REPLACEME {...props} />
 };
 
 PaginationGroup.displayName = "PaginationGroup";

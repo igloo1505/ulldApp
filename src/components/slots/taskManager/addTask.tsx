@@ -1,15 +1,11 @@
 // Slot: task-manager/AddTask type:component propsExtends:AddTaskProps
-
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { AddTaskProps } from "@ulld/task-manager/types";
 import React from "react";
 
-/* TODO: Extend this properly. */
-interface AddTaskModalProps {
-    isModal: boolean;
-    existingTaggables: any;
-}
 
-const AddTaskModal = (props: AddTaskModalProps) => {
-    return <div></div>;
+const AddTaskModal = (props: AddTaskProps) => {
+    return <REPLACEME {...props} />
 };
 
 AddTaskModal.displayName = "AddTaskModal";

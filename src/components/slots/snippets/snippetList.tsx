@@ -1,13 +1,11 @@
 // Slot: snippets/SnippetList type:component propsExtends:SnippetListInternalProps
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { SnippetListInternalProps } from "@ulld/snippets/types";
 import React from "react";
 
-interface SnippetListProps {
-    searchParams: any;
-    snippets: any;
-}
 
-const SnippetList = (props: SnippetListProps) => {
-    return <div></div>;
+const SnippetList = (props: SnippetListInternalProps) => {
+    return <REPLACEME {...props} />
 };
 
 SnippetList.displayName = "SnippetList";

@@ -1,5 +1,12 @@
-// Slot: navigation/secondary
-import SecondaryNav from "@ulld/navigation/sidebar"
+// Slot: navigation/secondary type:component propsExtends:SecondaryNavigationProps
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { SecondaryNavigationProps } from "@ulld/navigation/types";
+import React from "react";
 
+const SecondaryNavigation = (props: SecondaryNavigationProps) => {
+    return <REPLACEME {...props} />
+};
 
-export default SecondaryNav
+SecondaryNavigation.displayName = "SecondaryNavigation";
+
+export default SecondaryNavigation;

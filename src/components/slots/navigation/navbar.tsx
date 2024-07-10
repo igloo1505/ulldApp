@@ -1,6 +1,13 @@
-// Slot: navigation/navbar
-import NB from "@ulld/navigation/navbar"
+// Slot: navigation/navbar propsExtends:NavbarComponentProps
+import React from "react";
+import { NavbarComponentProps } from "@ulld/navigation/types";
+import REPLACEME from "#/components/REPLACEMEcomponent";
 
 
+const NavbarComponent = (props: NavbarComponentProps) => {
+    return <REPLACEME {...props} />
+};
 
-export default NB
+NavbarComponent.displayName = "NavbarComponent";
+
+export default NavbarComponent;

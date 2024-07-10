@@ -1,20 +1,12 @@
 // Slot: snippets/SnippetFilter type:component propsExtends:SnippetFilterProps
-import React from 'react'
-
-
-/* TODO: Extend this properly */
-interface SnippetFilterProps {
-   searchParams: any
-}
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import React from "react";
+import { SnippetFilterProps } from "@ulld/snippets/types";
 
 const SnippetFilter = (props: SnippetFilterProps) => {
-return (
-    <div></div>
-)
-}
+    return <REPLACEME {...props} />;
+};
 
-
-SnippetFilter.displayName = "SnippetFilter"
-
+SnippetFilter.displayName = "SnippetFilter";
 
 export default SnippetFilter;

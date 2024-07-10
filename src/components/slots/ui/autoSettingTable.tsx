@@ -1,21 +1,12 @@
 // Slot: UI/AutoSettingsTable type:component propsExtends:AutoSettingsTableProps
-import React from 'react'
-
-
-
-interface AutoSettingsTableProps {
-    settings: any
-    editing?: any
-}
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { AutoSettingsTableProps } from "@ulld/ui/types";
+import React from "react";
 
 const AutoSettingsTable = (props: AutoSettingsTableProps) => {
-return (
-    <div></div>
-)
-}
+    return <REPLACEME {...props} />;
+};
 
-
-AutoSettingsTable.displayName = "AutoSettingsTable"
-
+AutoSettingsTable.displayName = "AutoSettingsTable";
 
 export default AutoSettingsTable;

@@ -1,15 +1,11 @@
 // Slot: editor/MdxEditorPage type:page propsExtends:EditorPageContentProps
 import React from 'react'
+import { EditorPageContentProps } from '@ulld/utilities/corePageProps'
+import REPLACEME from '#/components/REPLACEMEcomponent'
 
-
-/* TODO: Extend this type properly */
-export interface PageProps {
-
-}
-
-const MdxEditorPage = (props: PageProps) => {
+const MdxEditorPage = (props: EditorPageContentProps) => {
 return (
-    <div></div>
+    <REPLACEME {...props} />
 )
 }
 

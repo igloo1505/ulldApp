@@ -1,16 +1,12 @@
 // Slot: UI/NoteSummarySearchResult type:component propsExtends:NoteSummaryProps
-
+import REPLACEME from '#/components/REPLACEMEcomponent'
+import { NoteSummaryProps } from '@ulld/ui/types'
 import React from 'react'
 
-/* TODO: Extend this properly */
-interface NoteSummaryItemProps {
-   index: number
-    item: any
-}
 
-const NoteSummaryItem = (props: NoteSummaryItemProps) => {
+const NoteSummaryItem = (props: NoteSummaryProps) => {
 return (
-    <div></div>
+    <REPLACEME {...props} />
 )
 }
 

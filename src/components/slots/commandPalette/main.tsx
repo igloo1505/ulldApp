@@ -1,6 +1,20 @@
 // Slot: commandPalette/commandPalette
+import REPLACEME from '#/components/REPLACEMEcomponent';
+import React from 'react'
 
-import DefaultCommandPalette from "@ulld/command-palette/commandPalette"
+
+interface CommandPaletteTemplateProps {
+
+}
+
+const CommandPaletteTemplate = (props: CommandPaletteTemplateProps) => {
+return (
+    <REPLACEME />
+)
+}
 
 
-export default DefaultCommandPalette
+CommandPaletteTemplate.displayName = "CommandPaletteTemplate"
+
+
+export default CommandPaletteTemplate;

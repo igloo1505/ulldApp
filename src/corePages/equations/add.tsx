@@ -1,20 +1,12 @@
 // Slot: equations/AddEquationPage type:page propsExtends:AddEquationsPageProps
-import React from 'react'
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { AddEquationsPageProps } from "@ulld/utilities/corePageProps";
+import React from "react";
 
+const AddEquationPage = (props: AddEquationsPageProps) => {
+    return <REPLACEME {...props} />;
+};
 
-
-interface AddEquationPageProps {
-
-}
-
-const AddEquationPage = (props: AddEquationPageProps) => {
-return (
-    <div></div>
-)
-}
-
-
-AddEquationPage.displayName = "AddEquationPage"
-
+AddEquationPage.displayName = "AddEquationPage";
 
 export default AddEquationPage;

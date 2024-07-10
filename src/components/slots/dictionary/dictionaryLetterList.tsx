@@ -1,18 +1,12 @@
 // Slot: UI/DictionaryLetterList type:component propsExtends:DictionaryLetterList
-import React, { ReactNode } from "react";
+import React from "react";
+import { DictionaryLetterList } from "@ulld/ui/types";
+import REPLACEME from "#/components/REPLACEMEcomponent";
 
-/* TODO: Extend properly. */
-interface DictionaryLetterListProps {
-    children: ReactNode;
-    letter: string;
-    currentPage?: any
-
-}
-
-const DictionaryLetterList = ({ children }: DictionaryLetterListProps) => {
-    return <div>{children}</div>;
+const DictionaryLetterListComponent = ({ children }: DictionaryLetterList) => {
+    return <REPLACEME>{children}</REPLACEME>;
 };
 
-DictionaryLetterList.displayName = "DictionaryLetterList";
+DictionaryLetterListComponent.displayName = "DictionaryLetterListComponent";
 
-export default DictionaryLetterList;
+export default DictionaryLetterListComponent;

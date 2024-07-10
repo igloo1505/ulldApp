@@ -46,7 +46,10 @@
                 "./src/*"
             ],
             "buildData": [
-                "./src/ulldBuildData.json"
+                "./ulldBuildData.json"
+            ],
+            "appConfig": [
+                "./appConfig.ulld.json"
             ]
         },
         "incremental": true

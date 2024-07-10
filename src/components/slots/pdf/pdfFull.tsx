@@ -1,23 +1,12 @@
 // Slot: pdf/FullPdf type:component propsExtends:FullPdfProps
-import React from 'react'
-
-
-
-interface FullPdfProps {
- file: {
-    rootRelativePath: string
-    absolutePath: string
-    }
-}
+import React from "react";
+import { FullPdfProps } from "@ulld/pdf/types";
+import REPLACEME from "#/components/REPLACEMEcomponent";
 
 const FullPdf = (props: FullPdfProps) => {
-return (
-    <div></div>
-)
-}
+    return <REPLACEME {...props} />
+};
 
-
-FullPdf.displayName = "FullPdf"
-
+FullPdf.displayName = "FullPdf";
 
 export default FullPdf;

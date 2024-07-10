@@ -1,21 +1,12 @@
 // Slot: UI/SearchResultsPage type:page propsExtends:SearchResultsPageProps
-import React, { ReactNode } from 'react'
-
-/* TODO: Extend properly */
-interface SearchResultsPageProps {
-    notes: ReactNode
-    taskLists: ReactNode
-}
-
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { SearchResultsPageProps } from "@ulld/ui/types";
+import React from "react";
 
 const SearchResultsPage = (props: SearchResultsPageProps) => {
-return (
-    <div></div>
-)
-}
+    return <REPLACEME {...props} />;
+};
 
-
-SearchResultsPage.displayName = "SearchResultsPage"
-
+SearchResultsPage.displayName = "SearchResultsPage";
 
 export default SearchResultsPage;

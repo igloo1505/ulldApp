@@ -1,16 +1,13 @@
 // Slot: UI/TaskListSearchResultList type:component propsExtends:TaskListSearchResultsListProps
+import REPLACEME from '#/components/REPLACEMEcomponent';
+import { TaskListSearchResultsListProps } from '@ulld/ui/types';
 import React from 'react'
 
 
 
-interface TaskListSearchResultComponentProps {
-
-}
-
-
-const TaskListSearchResultComponent = (props: TaskListSearchResultComponentProps) => {
+const TaskListSearchResultComponent = (props: TaskListSearchResultsListProps) => {
 return (
-    <div></div>
+    <REPLACEME {...props} />
 )
 }
 

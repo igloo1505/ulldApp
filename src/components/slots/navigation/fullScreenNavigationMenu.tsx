@@ -1,20 +1,12 @@
 // Slot: navigation/FullScreenNavigationMenu type:component propsExtends:FullScreenNavProps
-import React from 'react'
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { FullScreenNavProps } from "@ulld/navigation/types";
+import React from "react";
 
+const FullScreenNavigationMenu = (props: FullScreenNavProps) => {
+    return <REPLACEME {...props} />;
+};
 
-/* TODO: Extend this properly */
-interface FullScreenNavigationMenuProps {
-   isModal: boolean
-}
-
-const FullScreenNavigationMenu = (props: FullScreenNavigationMenuProps) => {
-return (
-    <div></div>
-)
-}
-
-
-FullScreenNavigationMenu.displayName = "FullScreenNavigationMenu"
-
+FullScreenNavigationMenu.displayName = "FullScreenNavigationMenu";
 
 export default FullScreenNavigationMenu;

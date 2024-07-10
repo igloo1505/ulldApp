@@ -1,6 +1,12 @@
-// Slot: UI/landingPage
-import BasicLandingPage from "@ulld/landing-layouts/beta"
+// Slot: landing/LandingPage propsExtends:LandingPageProps
+import React from "react";
+import { LandingPageProps } from "@ulld/landing-layouts/types";
+import REPLACEME from "#/components/REPLACEMEcomponent";
 
+const LandingPage = (props: LandingPageProps) => {
+    return <REPLACEME {...props}/>
+};
 
+LandingPage.displayName = "LandingPage";
 
-export default BasicLandingPage
+export default LandingPage;

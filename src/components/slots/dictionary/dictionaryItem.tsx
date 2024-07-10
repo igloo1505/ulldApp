@@ -1,11 +1,11 @@
 // Slot: UI/DictionaryPageItem type:component propsExtends:DictionaryItemProps
+import REPLACEME from "#/components/REPLACEMEcomponent";
 import React from "react";
+import { DictionaryItemProps } from "@ulld/ui/types";
 
-/* TODO: Extend this properly once updated packages are available to install. */
-interface DictionaryItemProps { }
 
 const DictionaryItem = (props: DictionaryItemProps) => {
-    return <div></div>;
+    return <REPLACEME {...props} />
 };
 
 DictionaryItem.displayName = "DictionaryItem";

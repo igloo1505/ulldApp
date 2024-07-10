@@ -1,17 +1,12 @@
 // Slot: snippets/AddSnippetPage type:page propsExtends:AddSnippetPageProps
-import type { serverClient } from '#/trpc/mainServer'
+import REPLACEME from '#/components/REPLACEMEcomponent'
+import { AddSnippetPageProps } from '@ulld/snippets/types'
 import React from 'react'
 
 
-/* TODO: Extend properly */
-interface AddSnippetProps {
-    editing?: ReturnType<typeof serverClient.snippets.getSpecificSnippet>
-    existingTaggables: any
-}
-
-const AddSnippet = (props: AddSnippetProps) => {
+const AddSnippet = (props: AddSnippetPageProps) => {
 return (
-    <div></div>
+    <REPLACEME {...props} />
 )
 }
 
