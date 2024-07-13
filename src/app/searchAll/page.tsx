@@ -5,7 +5,7 @@ import { NoteFilter } from "@ulld/api/classes/search/noteFilter";
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 import PaginationGroup from "#/components/slots/ui/pagination";
 import { paginateTemplateString } from "@ulld/utilities/paginationUtils"
-import { searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils"
+import { getSearchType, searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils"
 import NotesSearchResultsListComponent from "#/components/slots/search/lists/noteSearchResultsList";
 import NoteSummaryItem from "#/components/slots/search/items/noteSummary";
 import TaskListSearchResultComponent from "#/components/slots/search/lists/taskListSearchResults";
@@ -27,14 +27,20 @@ const SearchAllPageTemplate = async ({
     let sp = searchAllParamsToSearchParamsClass(searchParams)
     sp.set("page", paginateTemplateString)
     const taskLists: any[] = [] // Get this based on search params obviously.
+    const searchType = getSearchType(searchParams)
     return (
         <div className={"w-full relative"}>
             <SearchResultsPage 
                 notes={<NotesSearchResultsListComponent>
-                    {filter.notes.forEach((item, i) => <NoteSummaryItem key={`note-${item.id}`} item={item} index={i}/>)}
+                    {filter.notes.map((item, i) => <NoteSummaryItem
+                        key={`note-${item.id}`}
+                        item={item}
+                        index={i}
+                        searchType={searchType}
+                    />)}
                 </NotesSearchResultsListComponent>}
                 taskLists={<TaskListSearchResultComponent>
-                {taskLists.map((t, i) => <TaskListSearchResult data={t} index={i} key={`task-list-result-${i}`} />)}
+                {taskLists.map((t, i) => <TaskListSearchResult item={t} index={i} key={`task-list-result-${i}`} />)}
                 </TaskListSearchResultComponent>}
                 /* equations={[]} */
             />

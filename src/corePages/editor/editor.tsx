@@ -3,8 +3,9 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 import { MonacoPageParams } from "@ulld/editor/editorTypes";
 import React from "react";
 
+export interface PageProps extends MonacoPageParams {}
 
-const EditorPage = (props: MonacoPageParams) => {
+const EditorPage = (props: PageProps) => {
     return <REPLACEME {...props}/>
 };
 

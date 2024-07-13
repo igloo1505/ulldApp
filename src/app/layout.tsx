@@ -18,6 +18,7 @@ import DefaultCommandPalette from "#/components/slots/commandPalette/main"
 import DefaultConfirmationModal from "#/components/slots/ui/confirmationModal";
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import Logo from "#/components/slots/ui/logo"
+import BibEntryDetailSheetTemplate from "#/components/slots/bibliography/bibEntryDetailsSheet";
 
 
 
@@ -88,7 +89,8 @@ const RootLayout = async (props: {
                     config={appConfig as any}
                 >
                 <DefaultCommandPalette />
-                <DefaultConfirmationModal />
+                <DefaultConfirmationModal config={appConfig as any} />
+                <BibEntryDetailSheetTemplate />
                 </StateWrappedUI>
                 {props.children}
                 <Toaster />

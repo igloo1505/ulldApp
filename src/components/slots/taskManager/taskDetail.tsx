@@ -1,12 +1,12 @@
-// Slot: task-manager/TaskDetails type:component propsExtends:TaskDetailsPageProps
+// Slot: task-manager/TaskDetails type:component propsExtends:TaskDetailsProps
 import REPLACEME from "#/components/REPLACEMEcomponent";
 import { TodoTaskOutput } from "@ulld/parsers/plugins/todos";
-import { TaskDetailsPageProps } from "@ulld/task-manager/types";
+import { TaskDetailsProps } from "@ulld/task-manager/types";
 import React from "react";
 
 
 
-const TaskManagerTaskDetails = (props: TaskDetailsPageProps) => {
+const TaskManagerTaskDetails = (props: TaskDetailsProps) => {
     return <REPLACEME {...props} />
 };
 

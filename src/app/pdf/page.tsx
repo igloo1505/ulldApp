@@ -9,8 +9,11 @@ interface PdfPageTemplateProps {
     };
 }
 
-const PdfPageTemplate = ({ searchParams: { file } }: PdfPageTemplateProps) => {
-    return <FullPdf file={getFilePathProp(file, buildData.fsRoot)} />;
+const PdfPageTemplate = ({ searchParams }: PdfPageTemplateProps) => {
+    return <FullPdf
+        file={getFilePathProp(searchParams.file, buildData.fsRoot)}
+        searchParams={searchParams}
+    />;
 };
 
 PdfPageTemplate.displayName = "PdfPageTemplate";

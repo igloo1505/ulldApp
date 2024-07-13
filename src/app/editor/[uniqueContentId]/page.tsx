@@ -1,7 +1,6 @@
 // ULLD: protected-path
-import EditorPage, { PageProps } from "#/corePages/editor/editor";
 import React from "react";
-
+import EditorPage, { PageProps } from "#/corePages/editor/editor";
 interface EditorPageTemplateProps extends PageProps { }
 
 const EditorPageTemplate = (props: EditorPageTemplateProps) => {
