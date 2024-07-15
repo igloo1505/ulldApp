@@ -54,6 +54,7 @@
         "@ulld/ui": "0.0.7",
         "@ulld/utilities": "0.0.7",
         "@ulld/whiteboard": "0.0.7",
+        "@ulld/developer": "0.0.7",
         "@use-gesture/react": "^10.3.1",
         "@use-gesture/vanilla": "^10.3.1",
         "alea": "^1.0.1",

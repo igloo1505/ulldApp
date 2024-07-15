@@ -1,4 +1,4 @@
-// Slot: task-manager/AddTask type:component propsExtends:AddTaskProps
+// Slot: taskManager/AddTask type:component propsExtends:AddTaskProps
 import REPLACEME from "#/components/REPLACEMEcomponent";
 import { AddTaskProps } from "@ulld/task-manager/types";
 import React from "react";

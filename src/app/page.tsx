@@ -1,18 +1,17 @@
-import React from 'react'
-import LandingPageComponent from "#/components/slots/landingPage/main"
+import React from "react";
+import LandingPageComponent from "#/components/slots/landingPage/main";
+import { readAppConfig } from "@ulld/developer/readAppConfig";
 
-interface LandingPageProps {
+interface LandingPageProps { }
 
-}
+const LandingPage = async (props: LandingPageProps) => {
+    const config = await readAppConfig();
+    return <LandingPageComponent
+        {...props}
+        config={config}
+    />;
+};
 
-const LandingPage = (props: LandingPageProps) => {
-    return (
-        <LandingPageComponent {...props}/>
-    )
-}
-
-
-LandingPage.displayName = "LandingPage"
-
+LandingPage.displayName = "LandingPage";
 
 export default LandingPage;

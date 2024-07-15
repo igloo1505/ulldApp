@@ -1,4 +1,4 @@
-// Slot: landing/LandingPage propsExtends:LandingPageProps
+// Slot: dashboard/LandingPage propsExtends:LandingPageProps
 import React from "react";
 import { LandingPageProps } from "@ulld/landing-layouts/types";
 import REPLACEME from "#/components/REPLACEMEcomponent";

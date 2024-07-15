@@ -1,4 +1,4 @@
-// Slot: task-manager/TaskDetails type:component propsExtends:TaskDetailsProps
+// Slot: taskManager/TaskDetails type:component propsExtends:TaskDetailsProps
 import REPLACEME from "#/components/REPLACEMEcomponent";
 import { TodoTaskOutput } from "@ulld/parsers/plugins/todos";
 import { TaskDetailsProps } from "@ulld/task-manager/types";

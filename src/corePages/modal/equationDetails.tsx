@@ -1,4 +1,4 @@
-// Slot: equations/EquationDetailsModalPage clientOnly type:page propsExtends:EquationDetailModalPageProps
+// Slot: math/EquationDetailsModalPage clientOnly type:page propsExtends:EquationDetailModalPageProps
 import REPLACEME from "#/components/REPLACEMEcomponent";
 import { EquationDetailModalPageProps } from "@ulld/utilities/corePageProps";
 import React from "react";
