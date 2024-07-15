@@ -24,7 +24,7 @@ const TaskDetailsPage = async ({
 
     return <TaskManagerTaskDetails
         isModal={false}
-        task={task}
+        data={task}
     />;
 };
 

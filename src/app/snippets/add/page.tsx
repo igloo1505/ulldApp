@@ -1,5 +1,6 @@
 import AddSnippet from "#/corePages/snippets/add";
 import { serverClient } from "#/trpc/mainServer";
+import { UniqueTaggables } from "@ulld/utilities/types";
 import React from "react";
 
 interface AddSnippetPageTemplateProps {
@@ -22,7 +23,7 @@ const AddSnippetPageTemplate = async ({
 
     return <AddSnippet 
         editing={editItem}
-        existingTaggables={existingTaggables}
+        existingTaggables={existingTaggables as UniqueTaggables}
     />
 };
 
