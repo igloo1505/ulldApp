@@ -1,21 +1,23 @@
 // ULLD: protected-path
-import TaskManagerPage from '#/components/slots/taskManager/taskManagerPage';
-import React from 'react'
+import TaskManagerPage from "#/components/slots/taskManager/taskManagerPage";
+import { serverClient } from "@ulld/api/serverClient";
+import {
+    getToDoSearchParams,
+    TodoTaskOutput,
+} from "@ulld/parsers/plugins/todos";
+import { TaskManagerPageProps } from "@ulld/task-manager/types";
+import React from "react";
 
+const TaskListMainPageTemplate = async (
+    props: Pick<TaskManagerPageProps, "searchParams">,
+) => {
+    const sp = getToDoSearchParams.parse(props.searchParams);
+    const data = await serverClient.toDo.getToDos(sp);
+    let tasks: TodoTaskOutput[] = [];
+    data.todos?.forEach((l) => (tasks = tasks.concat(l.tasks)));
+    return <TaskManagerPage {...props} {...data} />;
+};
 
-
-interface TaskListMainPageTemplateProps {
-
-}
-
-const TaskListMainPageTemplate = (props: TaskListMainPageTemplateProps) => {
-return (
-    <TaskManagerPage />
-)
-}
-
-
-TaskListMainPageTemplate.displayName = "TaskListMainPageTemplate"
-
+TaskListMainPageTemplate.displayName = "TaskListMainPageTemplate";
 
 export default TaskListMainPageTemplate;

@@ -1,19 +1,17 @@
 // Slot: task-manager/TaskManagerPage propsExtends:TaskManagerPageProps
-import React from 'react'
+import REPLACEME from "#/components/REPLACEMEcomponent";
+import { TaskManagerPageProps } from "@ulld/task-manager/types";
+import React from "react";
 
+const TaskManagerPage = async (
+    props: TaskManagerPageProps,
+) => {
 
-export interface PageProps {
+    return <REPLACEME
+        {...props}
+    />;
+};
 
-}
-
-const TaskManagerPage = (props: PageProps) => {
-return (
-    <div></div>
-)
-}
-
-
-TaskManagerPage.displayName = "TaskManagerPage"
-
+TaskManagerPage.displayName = "TaskManagerPage";
 
 export default TaskManagerPage;
