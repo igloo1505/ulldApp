@@ -5,11 +5,12 @@ import { NoteFilter } from "@ulld/api/classes/search/noteFilter";
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
 import PaginationGroup from "#/components/slots/ui/pagination";
 import { paginateTemplateString } from "@ulld/utilities/paginationUtils"
-import { getSearchType, searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils"
+import { getSearchType, getTaggablesFromSearchAllParams, searchAllParamsToSearchParamsClass } from "@ulld/utilities/searchUtils"
 import NotesSearchResultsListComponent from "#/components/slots/search/lists/noteSearchResultsList";
 import NoteSummaryItem from "#/components/slots/search/items/noteSummary";
 import TaskListSearchResultComponent from "#/components/slots/search/lists/taskListSearchResults";
 import TaskListSearchResult from "#/components/slots/search/items/taskListSearchResult";
+import { serverClient } from "#/trpc/mainServer";
 
 
 interface SearchAllPageTemplateProps {
@@ -26,8 +27,9 @@ const SearchAllPageTemplate = async ({
     await filter.getResults(config);
     let sp = searchAllParamsToSearchParamsClass(searchParams)
     sp.set("page", paginateTemplateString)
-    const taskLists: any[] = [] // Get this based on search params obviously.
     const searchType = getSearchType(searchParams)
+    const taskLists = await serverClient.toDo.findListsByTaggables(getTaggablesFromSearchAllParams(searchParams))
+
     return (
         <div className={"w-full relative"}>
             <SearchResultsPage 
@@ -40,7 +42,12 @@ const SearchAllPageTemplate = async ({
                     />)}
                 </NotesSearchResultsListComponent>}
                 taskLists={<TaskListSearchResultComponent>
-                {taskLists.map((t, i) => <TaskListSearchResult item={t} index={i} key={`task-list-result-${i}`} />)}
+                {taskLists.map((t, i) => <TaskListSearchResult
+                        item={t}
+                        index={i}
+                        totalFound={taskLists.length}
+                        key={`task-list-result-${i}`}
+                    />)}
                 </TaskListSearchResultComponent>}
                 /* equations={[]} */
             />
