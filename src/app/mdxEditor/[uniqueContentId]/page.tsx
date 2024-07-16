@@ -1,10 +1,9 @@
-// ULLD: protected-path
+// ULLD: protected-path pageFor:editor/MdxEditorPage
 import MdxEditorPage, { PageProps } from "#/corePages/editor/mdxEditor";
 import React from "react";
 
-interface MdxEditorPageTemplateProps extends PageProps { }
 
-const MdxEditorPageTemplate = (props: MdxEditorPageTemplateProps) => {
+const MdxEditorPageTemplate = (props: PageProps) => {
     return <MdxEditorPage {...props} />;
 };
 

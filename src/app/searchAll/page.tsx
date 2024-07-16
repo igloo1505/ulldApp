@@ -1,3 +1,4 @@
+// ULLD: protected-path pageFor:UI/SearchResultsPage
 import React from "react";
 import { SearchAllParams } from "@ulld/utilities/types";
 import SearchResultsPage from "#/components/slots/search/searchResults";
@@ -19,16 +20,15 @@ interface SearchAllPageTemplateProps {
 
 
 /* TODO: Handle the tasks and equations return here as well based on tags or other search methods */
-const SearchAllPageTemplate = async ({
-    searchParams,
-}: SearchAllPageTemplateProps) => {
-    const filter = new NoteFilter("all", searchParams);
+const SearchAllPageTemplate = async (props: SearchAllPageTemplateProps) => {
+
+    const filter = new NoteFilter("all", props.searchParams);
     const config = getInternalConfig();
     await filter.getResults(config);
-    let sp = searchAllParamsToSearchParamsClass(searchParams)
+    let sp = searchAllParamsToSearchParamsClass(props.searchParams)
     sp.set("page", paginateTemplateString)
-    const searchType = getSearchType(searchParams)
-    const taskLists = await serverClient.toDo.findListsByTaggables(getTaggablesFromSearchAllParams(searchParams))
+    const searchType = getSearchType(props.searchParams)
+    const taskLists = await serverClient.toDo.findListsByTaggables(getTaggablesFromSearchAllParams(props.searchParams))
 
     return (
         <div className={"w-full relative"}>
@@ -52,7 +52,7 @@ const SearchAllPageTemplate = async ({
                 /* equations={[]} */
             />
             <PaginationGroup 
-                currentPage={searchParams?.page ? parseInt(searchParams.page) : 1}
+                currentPage={props.searchParams?.page ? parseInt(props.searchParams.page) : 1}
                 totalItems={filter.totalFound}
                 itemsPerPage={filter.perPage}
                 hrefTemplate={`/searchAll?${sp.toString()}`}

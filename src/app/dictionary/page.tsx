@@ -61,7 +61,7 @@ const DictionaryPageTemplate = async ({
                 ? "a"
                 : "all";
 
-    let letterMap: { [k in LetterType]: DefinitionListType } = {
+    let letterMap: Record<LetterType, DefinitionListType> = {
         number: [],
         a: [],
         b: [],
@@ -100,7 +100,11 @@ const DictionaryPageTemplate = async ({
 
     return letters.map((letter) => {
         return (
-            <DictionaryLetterList letter={letter} currentPage={page} letter={letter}>
+            <DictionaryLetterList
+                letter={letter} 
+                currentPage={page ? parseInt(page) : undefined}
+                letter={letter}
+            >
                 {sortAlphabetical<DictionaryDefinitionReturnType>(letterMap[letter], (d) => d.alphabeticalLabel || d.label || d.id).map((item, i) => {
                     return (
                         <DictionaryItem key={`dictionary-item-${letter}-${i}`} {...item} />

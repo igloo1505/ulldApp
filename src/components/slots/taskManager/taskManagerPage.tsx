@@ -1,4 +1,4 @@
-// Slot: taskManager/TaskManagerPage propsExtends:TaskManagerPageProps
+// Slot: taskManager/TaskManagerPage type:page propsExtends:TaskManagerPageProps
 import REPLACEME from "#/components/REPLACEMEcomponent";
 import { TaskManagerPageProps } from "@ulld/task-manager/types";
 import React from "react";

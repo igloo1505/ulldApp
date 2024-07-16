@@ -3,7 +3,10 @@ import React from 'react'
 import { EditorPageContentProps } from '@ulld/utilities/corePageProps'
 import REPLACEME from '#/components/REPLACEMEcomponent'
 
-const MdxEditorPage = (props: EditorPageContentProps) => {
+export interface PageProps extends EditorPageContentProps {
+}
+
+const MdxEditorPage = (props: PageProps) => {
 return (
     <REPLACEME {...props} />
 )

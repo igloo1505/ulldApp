@@ -1,4 +1,4 @@
-// ULLD: protected-path
+// ULLD: protected-path pageFor:editor/EditorPage
 import React from "react";
 import EditorPage, { PageProps } from "#/corePages/editor/editor";
 interface EditorPageTemplateProps extends PageProps { }

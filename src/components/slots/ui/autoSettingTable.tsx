@@ -1,9 +1,14 @@
-// Slot: UI/AutoSettingsTable type:component propsExtends:AutoSettingsTableProps
+// Slot: UI/AutoSettingsTable type:page propsExtends:AutoSettingsTableProps
+
 import REPLACEME from "#/components/REPLACEMEcomponent";
 import { AutoSettingsTableProps } from "@ulld/ui/types";
 import React from "react";
 
-const AutoSettingsTable = (props: AutoSettingsTableProps) => {
+export interface PageProps extends AutoSettingsTableProps {
+
+}
+
+const AutoSettingsTable = (props: PageProps) => {
     return <REPLACEME {...props} />;
 };
 

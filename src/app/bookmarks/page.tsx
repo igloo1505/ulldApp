@@ -1,9 +1,10 @@
-// ULLD: protected-path
+// ULLD: protected-path pageFor:UI/BookmarksPage
 import { getInternalConfig } from '@ulld/configschema/zod/getInternalConfig'
-import type { SearchAllParams } from "@ulld/state/searchParamSchemas/utilities/formatSearchAllParams";
 import {NoteFilter} from "@ulld/api/classes/search/noteFilter"
 import React from 'react'
 import BookmarkResultsPage from '#/components/slots/search/bookmarksPage';
+import { SearchAllParams } from '@ulld/utilities/types';
+import NoteSummaryItem from '#/components/slots/search/items/noteSummary';
 
 
 interface BookmarksPageProps {
@@ -17,7 +18,20 @@ const BookmarksPage = async ({ searchParams }: BookmarksPageProps) => {
     const notes = await filter.getBookmarked(config)
 
     return (
-        <BookmarkResultsPage notes={notes} />
+        <BookmarkResultsPage
+            notes={<>
+            {notes.map((n, i) => {
+                return (
+                <NoteSummaryItem
+                        index={i}
+                        item={n}
+                        searchType="bookmarked"
+                    />
+                )
+            })}
+            </>}
+        >
+        </BookmarkResultsPage>
     )
 }
 

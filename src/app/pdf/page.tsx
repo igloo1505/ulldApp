@@ -1,22 +1,17 @@
-import FullPdf from "#/components/slots/pdf/pdfFull";
+// ULLD: protected-path pageFor:pdf/FullPdf
+import FullPdf, {PageProps} from "#/components/slots/pdf/pdfFull";
 import React from "react";
 import { getFilePathProp } from "@ulld/utilities/filePathUtils";
 import buildData from "buildData"
 import { notFound } from "next/navigation";
 
-interface PdfPageTemplateProps {
-    searchParams: {
-        file: string;
-    };
-}
-
-const PdfPageTemplate = ({ searchParams }: PdfPageTemplateProps) => {
-    if(!searchParams.file){
+const PdfPageTemplate = (props: PageProps) => {
+    if(!props.searchParams.file){
         return notFound()
     }
     return <FullPdf
-        file={getFilePathProp(searchParams.file, buildData.fsRoot)}
-        searchParams={searchParams}
+        {...props}
+        file={getFilePathProp(props.searchParams.file, buildData.fsRoot)}
     />;
 };
 

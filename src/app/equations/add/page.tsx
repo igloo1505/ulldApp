@@ -1,12 +1,11 @@
-// ULLD: protected-path
-import AddEquationPage from '#/corePages/equations/add';
-import { AddEquationPageTemplateProps } from '#/types/corePageProps';
+// ULLD: protected-path pageFor:math/AddEquationPage
+import AddEquationPage, {PageProps} from '#/corePages/equations/add';
 import React from 'react'
+import { AddEquationsPageProps } from "@ulld/utilities/corePageProps";
 
-/* TODO: Extend with AddEquationsPageProps */
-type PageProps = {}
 
-const AddEquationPageTemplate = (props: AddEquationPageTemplateProps) => {
+
+const AddEquationPageTemplate = (props: PageProps) => {
 return (
     <AddEquationPage {...props} />
 )

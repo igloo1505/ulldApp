@@ -1,14 +1,15 @@
+// ULLD: protected-path pageFor:dashboard/LandingPage
 import React from "react";
 import LandingPageComponent from "#/components/slots/landingPage/main";
-import { readAppConfig } from "@ulld/developer/readAppConfig";
+import appConfig from "appConfig"
+import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 
 interface LandingPageProps { }
 
 const LandingPage = async (props: LandingPageProps) => {
-    const config = await readAppConfig();
     return <LandingPageComponent
         {...props}
-        config={config}
+        config={appConfig as AppConfigSchemaOutput}
     />;
 };
 

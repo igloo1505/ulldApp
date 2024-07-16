@@ -1,4 +1,4 @@
-// ULLD: protected-path
+// ULLD: protected-path pageFor:taskManager/TaskManagerPage
 import TaskManagerPage from "#/components/slots/taskManager/taskManagerPage";
 import { serverClient } from "@ulld/api/serverClient";
 import {

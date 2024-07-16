@@ -1,3 +1,4 @@
+// ULLD: protected-path
 import SnippetFilter from "#/components/slots/snippets/snippetFilter";
 import SnippetList from "#/components/slots/snippets/snippetList";
 import { serverClient } from "#/trpc/mainServer";

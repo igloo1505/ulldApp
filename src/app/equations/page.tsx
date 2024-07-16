@@ -1,11 +1,9 @@
-// ULLD: protected-path
-import EquationsPage from "#/corePages/equations/list";
+// ULLD: protected-path pageFor:math/EquationsPage
+import EquationsPage, { PageProps } from "#/corePages/equations/list";
 import React from "react";
 
-/* TODO: Extend type with EquationsPageProps */
-interface EquationsPageTemplateProps { }
 
-const EquationsPageTemplate = (props: EquationsPageTemplateProps) => {
+const EquationsPageTemplate = (props: PageProps) => {
     return <EquationsPage {...props} />;
 };
 

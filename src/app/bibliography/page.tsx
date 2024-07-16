@@ -1,4 +1,4 @@
-// ULLD: protected-path
+// ULLD: protected-path pageFor:bibliography/BibliographyPage
 import BibEntryDetailSheetTemplate from "#/components/slots/bibliography/bibEntryDetailsSheet";
 import LoadingIndicator from "#/components/slots/ui/loadingIndicator";
 import BibliographyPage, {
@@ -15,7 +15,7 @@ const BibliographyPageTemplate = async (props: BibliographyPageTemplateProps) =>
 
     return <BibliographyPage
         {...props}
-        prismaBib={bib as Awaited<ReturnType<typeof serverClient.bibliography.getPrismaBib>>}
+        databaseBib={bib as Awaited<ReturnType<typeof serverClient.bibliography.getPrismaBib>>}
         loadingIndicator={LoadingIndicator}
         bibEntryDetailsSheet={BibEntryDetailSheetTemplate}
     />;

@@ -3,7 +3,11 @@ import React from "react";
 import { FullPdfProps } from "@ulld/pdf/types";
 import REPLACEME from "#/components/REPLACEMEcomponent";
 
-const FullPdf = (props: FullPdfProps) => {
+export interface PageProps extends FullPdfProps {
+
+}
+
+const FullPdf = (props: PageProps) => {
     return <REPLACEME {...props} />
 };
 

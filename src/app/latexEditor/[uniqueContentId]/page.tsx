@@ -1,10 +1,9 @@
-// ULLD: protected-path
+// ULLD: protected-path pageFor:editor/LatexEditorPage
 import LatexEditor, { PageProps } from "#/corePages/editor/latexEditor";
 import React from "react";
 
-interface LatexEditorPageTemplateProps extends PageProps { }
 
-const LatexEditorPageTemplate = (props: LatexEditorPageTemplateProps) => {
+const LatexEditorPageTemplate = (props: PageProps) => {
     return <LatexEditor {...props} />;
 };
 

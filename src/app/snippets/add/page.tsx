@@ -1,3 +1,4 @@
+// ULLD: protected-path pageFor:snippets/AddSnippetPage
 import AddSnippet from "#/corePages/snippets/add";
 import { serverClient } from "#/trpc/mainServer";
 import { UniqueTaggables } from "@ulld/utilities/types";

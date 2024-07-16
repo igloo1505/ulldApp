@@ -3,7 +3,10 @@ import REPLACEME from '#/components/REPLACEMEcomponent';
 import { EquationDetailModalPageProps } from '@ulld/utilities/corePageProps';
 import React from 'react'
 
-const EquationDetailsPage = (props: EquationDetailModalPageProps) => {
+export interface PageProps extends EquationDetailModalPageProps {
+}
+
+const EquationDetailsPage = (props: PageProps) => {
 return (
     <REPLACEME {...props} />
 )

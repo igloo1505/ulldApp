@@ -3,7 +3,9 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 import { FullScreenNavProps } from "@ulld/navigation/types";
 import React from "react";
 
-const FullScreenNavigationMenu = (props: FullScreenNavProps) => {
+export interface PageProps extends FullScreenNavProps {}
+
+const FullScreenNavigationMenu = (props: PageProps) => {
     return <REPLACEME {...props} />;
 };
 

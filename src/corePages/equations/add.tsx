@@ -3,7 +3,9 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 import { AddEquationsPageProps } from "@ulld/utilities/corePageProps";
 import React from "react";
 
-const AddEquationPage = (props: AddEquationsPageProps) => {
+export interface PageProps extends AddEquationsPageProps {}
+
+const AddEquationPage = (props: PageProps) => {
     return <REPLACEME {...props} />;
 };
 

@@ -1,23 +1,24 @@
-// ULLD: protected-path
-import FullScreenNavigationMenu from '#/components/slots/navigation/fullScreenNavigationMenu';
-import React from 'react'
+// ULLD: protected-path pageFor:navigation/FullScreenNavigationMenu
+import FullScreenNavigationMenu, {
+} from "#/components/slots/navigation/fullScreenNavigationMenu";
+import { AnyPageParams } from "@ulld/types";
+import appConfig from "appConfig"
+import buildData from "buildData"
+import React from "react";
 
-
-
-interface FullScreenNavigationPageTemplateProps {
-
-}
-
-const FullScreenNavigationPageTemplate = (props: FullScreenNavigationPageTemplateProps) => {
-return (
-    <FullScreenNavigationMenu 
+const FullScreenNavigationPageTemplate = async (props: AnyPageParams) => {
+    return (
+        <FullScreenNavigationMenu
+            {...props}
             isModal={false}
+            noteTypes={appConfig.noteTypes}
+            navConfig={appConfig.navigation}
+            items={buildData.navigationLinks}
         />
-)
-}
+    );
+};
 
-
-FullScreenNavigationPageTemplate.displayName = "FullScreenNavigationPageTemplate"
-
+FullScreenNavigationPageTemplate.displayName =
+    "FullScreenNavigationPageTemplate";
 
 export default FullScreenNavigationPageTemplate;

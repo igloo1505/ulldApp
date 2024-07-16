@@ -1,7 +1,9 @@
+// ULLD: protected-path pageFor:UI/AutoSettingsTable
 import { serverClient } from "#/trpc/mainServer";
 import React from "react";
-import { AutoSettingType } from "@ulld/api/types";
+import { AutoSettingType } from "@ulld/types";
 import AutoSettingsTable from "#/components/slots/ui/autoSettingTable";
+import AutoSettingModal from "#/components/slots/ui/autoSettingFormModal";
 
 interface AutoSettingsPageTemplateProps {
     searchParams: {
@@ -24,7 +26,11 @@ const AutoSettingsPageTemplate = async ({
         editing = autoSettings.find((a) => a.id === edit);
     }
 
-    return <AutoSettingsTable editing={editing} settings={autoSettings} />;
+    return <AutoSettingsTable
+        editing={editing}
+        settings={autoSettings}
+        modal={AutoSettingModal}
+    />;
 };
 
 AutoSettingsPageTemplate.displayName = "AutoSettingsPageTemplate";
