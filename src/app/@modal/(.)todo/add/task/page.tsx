@@ -1,16 +1,20 @@
-// ULLD: protected-path
-import AddTaskModal from "#/components/slots/taskManager/addTask";
+// ULLD: protected-path pageFor:taskManager/AddTask
+import AddTaskModal, {PageProps} from "#/components/slots/taskManager/addTask";
 import { serverClient } from "#/trpc/mainServer";
+import { PickPageParams, UniqueTaggables } from "@ulld/utilities/types";
 import React from "react";
 
-interface AddTaskModalPageTemplateProps { }
 
 const AddTaskModalPageTemplate = async (
-    props: AddTaskModalPageTemplateProps,
+    props: PickPageParams<PageProps>,
 ) => {
     const uniqueTaggables =
         await serverClient.search.getUniqueTagTopicAndSubjects();
-    return <AddTaskModal isModal existingTaggables={uniqueTaggables} />;
+    return <AddTaskModal
+        {...props}
+        isModal 
+        existingTaggables={uniqueTaggables as UniqueTaggables}
+    />;
 };
 
 AddTaskModalPageTemplate.displayName = "AddTaskModalPageTemplate";

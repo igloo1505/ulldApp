@@ -1,13 +1,10 @@
-// ULLD: protected-path
-import EquationDetailsModalPage from '#/corePages/modal/equationDetails';
+// ULLD: protected-path pageFor:math/EquationDetailsModalPage
+import EquationDetailsModalPage, {PageProps} from '#/corePages/modal/equationDetails';
+import { PickSearchParams } from '@ulld/utilities/types';
 import React from 'react'
 
-/* TODO: Extend with propsExtends:EquationDetailModalPageProps */
-interface PageProps {
 
-}
-
-const EquationDetailModalTemplate = async (props: PageProps) => {
+const EquationDetailModalTemplate = async (props: PickSearchParams<PageProps>) => {
     return (
         <EquationDetailsModalPage {...props}/>
     )
