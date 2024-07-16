@@ -1,6 +1,7 @@
-// ULLD: protected-path
+// ULLD: protected-path pageFor:snippets/SnippetListPage
 import SnippetFilter from "#/components/slots/snippets/snippetFilter";
 import SnippetList from "#/components/slots/snippets/snippetList";
+import SnippetPageWrapper from "#/corePages/snippets/pageWrapper";
 import { serverClient } from "#/trpc/mainServer";
 import { snippetSchema } from "@ulld/snippets/schemas";
 import React from "react";
@@ -17,10 +18,10 @@ const SnippetsPageTemplate = async ({
     const snippets = snippetSchema.array().parse(_snippets);
 
     return (
-        <div className={"w-full inline-block space-y-6"}>
-            <SnippetFilter searchParams={searchParams} />
-            <SnippetList snippets={snippets} searchParams={searchParams} />
-        </div>
+            <SnippetPageWrapper 
+                list={<SnippetList snippets={snippets} searchParams={searchParams} />}
+                filter={<SnippetFilter searchParams={searchParams} />}
+            />
     );
 };
 

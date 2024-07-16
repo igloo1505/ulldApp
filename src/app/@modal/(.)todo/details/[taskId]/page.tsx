@@ -1,4 +1,4 @@
-// ULLD: protected-path
+// ULLD: protected-path pageFor:taskManager/TaskDetails
 import TaskManagerTaskDetails from "#/components/slots/taskManager/taskDetail";
 import { serverClient } from "@ulld/api/serverClient";
 import { todoTaskSchema } from "@ulld/parsers/plugins/todos";
