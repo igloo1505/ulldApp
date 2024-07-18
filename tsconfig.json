@@ -50,6 +50,9 @@
             ],
             "appConfig": [
                 "./appConfig.ulld.json"
+            ],
+            "notePageComponents/*": [
+                "./src/components/notePageComponents/*"
             ]
         },
         "incremental": true

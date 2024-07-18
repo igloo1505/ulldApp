@@ -71,6 +71,9 @@ importers:
       '@ulld/database':
         specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/database
         version: link:../ulld/packages/database
+      '@ulld/developer':
+        specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/developer
+        version: link:../ulld/packages/developer
       '@ulld/editor':
         specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/editor
         version: link:../ulld/packages/editor
@@ -108,7 +111,7 @@ importers:
         specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/parsers
         version: link:../ulld/packages/parsers
       '@ulld/pdf':
-        specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/pdf/
+        specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/pdf
         version: link:../ulld/packages/pdf
       '@ulld/plot':
         specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/plot
@@ -327,6 +330,9 @@ importers:
       '@types/three':
         specifier: ^0.162.0
         version: 0.162.0
+      '@ulld/types':
+        specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/types
+        version: link:../ulld/packages/types
       '@vercel/node':
         specifier: ^3.1.4
         version: 3.2.1

@@ -1,0 +1,14 @@
+// Slot: UI/NoteTypeSearchResultList type:page propsExtends:NoteTypeSearchResultListProps
+import { NoteTypeSearchResultListProps } from "@ulld/ui/types";
+import React from "react";
+import REPLACEME from "../REPLACEMEcomponent";
+
+export interface PageProps extends NoteTypeSearchResultListProps { }
+
+const NoteTypeSearchResultTemplate = (props: PageProps) => {
+    return <REPLACEME {...props} />;
+};
+
+NoteTypeSearchResultTemplate.displayName = "NoteTypeSearchResultTemplate";
+
+export default NoteTypeSearchResultTemplate;
