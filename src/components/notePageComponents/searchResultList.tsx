@@ -1,4 +1,4 @@
-// Slot: UI/NoteTypeSearchResultList type:page propsExtends:NoteTypeSearchResultListProps
+// Slot: UI/NoteTypeSearchResultList type:generatedPage propsExtends:NoteTypeSearchResultListProps
 import { NoteTypeSearchResultListProps } from "@ulld/ui/types";
 import React from "react";
 import REPLACEME from "../REPLACEMEcomponent";

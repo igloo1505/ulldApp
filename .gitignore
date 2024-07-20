@@ -1,3 +1,5 @@
 appConfig.ulld.json
 node_modules
 ulldBuildData.json
+src/app/math
+src/app/physics

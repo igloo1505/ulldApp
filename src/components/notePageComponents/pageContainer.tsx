@@ -1,4 +1,4 @@
-// Slot: UI/NoteTypePageContainer type:page propsExtends:NotePageWrapperProps
+// Slot: UI/NoteTypePageContainer type:generatedPage propsExtends:NotePageWrapperProps
 import React from 'react'
 import REPLACEME from '../REPLACEMEcomponent';
 import { NotePageWrapperProps } from '@ulld/ui/types';

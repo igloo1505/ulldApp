@@ -1,0 +1,17 @@
+import ComponentDocsListPageTemplate, {
+    PageProps,
+} from "#/corePages/componentDocs/componentDocsListPage";
+import React from "react";
+import buildData from "buildData";
+
+interface ComponentDocsListPageProps extends PageProps { }
+
+const ComponentDocsListPage = (props: ComponentDocsListPageProps) => {
+    return (
+        <ComponentDocsListPageTemplate {...props} items={buildData.componentDocs} />
+    );
+};
+
+ComponentDocsListPage.displayName = "ComponentDocsListPage";
+
+export default ComponentDocsListPage;

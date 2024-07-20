@@ -1,9 +1,6 @@
 import clsx from "clsx";
 import "@ulld/tailwind/defaultStyles.scss";
-/* import "./styles.css" */
-/* import "#/styles/mdx.scss" */
-/* import type { Metadata } from 'next' */
-/* import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main"; */
+import type { Metadata } from 'next'
 import { cookies } from "next/headers";
 import React from "react";
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
@@ -19,13 +16,14 @@ import DefaultConfirmationModal from "#/components/slots/ui/confirmationModal";
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import Logo from "#/components/slots/ui/logo"
 import BibEntryDetailSheetTemplate from "#/components/slots/bibliography/bibEntryDetailsSheet";
+import MathjaxProvider from "@ulld/utilities/providers-mathjax"
 
 
 
-/* export const metadata: Metadata = { */
-/*     title: 'Uh Little Less Dum', */
-/*     description: 'The world has enough stupid people.', */
-/* } */
+export const metadata: Metadata = {
+    title: (appConfig as AppConfigSchemaOutput).meta.title,
+    description: (appConfig as AppConfigSchemaOutput).meta.desc,
+}
 
 const RootLayout = async (props: {
     children: React.ReactNode;
@@ -92,7 +90,9 @@ const RootLayout = async (props: {
                 <DefaultConfirmationModal config={appConfig as any} />
                 <BibEntryDetailSheetTemplate />
                 </StateWrappedUI>
+                <MathjaxProvider>
                 {props.children}
+                </MathjaxProvider>
                 <Toaster />
                 {props.modal && props.modal}
             </body>
