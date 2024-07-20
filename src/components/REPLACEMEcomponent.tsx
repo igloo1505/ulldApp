@@ -1,6 +1,6 @@
 import React from "react";
 
-const REPLACEME = (props: any) => {
+const REPLACEME = <T extends unknown>(props: T) => {
     return <div></div>;
 };
 

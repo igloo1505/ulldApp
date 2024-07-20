@@ -5,6 +5,7 @@ import { getContentHeadings } from "@ulld/utilities/getMarkdownHeadings";
 import buildData from "buildData";
 import { getPluginDocContentByIds } from "@ulld/utilities/componentDocsPathUtils";
 import { notFound } from "next/navigation";
+import MdxNoteTocTemplate from "#/components/slots/navigation/mdxNoteToc";
 
 interface ComponentDocumentationPageProps {
     params: {
@@ -30,6 +31,7 @@ const ComponentDocumentationPage = async ({
     return (
         <ComponentDocPageWrapperTemplate
             {...params}
+            toc={MdxNoteTocTemplate}
             item={data.item}
             headings={getContentHeadings(data.content)}
         >

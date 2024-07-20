@@ -1,13 +1,17 @@
-// Slot: UI/NoteTypePageContainer type:generatedPage propsExtends:NotePageWrapperProps
+// Slot: UI/MdxNoteContainer type:generatedPage propsExtends:NotePageWrapperProps
 import React from 'react'
 import REPLACEME from '../REPLACEMEcomponent';
 import { NotePageWrapperProps } from '@ulld/ui/types';
+import MdxNoteTocTemplate from '../slots/navigation/mdxNoteToc';
 
-export interface PageProps extends NotePageWrapperProps {}
+export interface PageProps extends Omit<NotePageWrapperProps, "toc"> {}
 
-const NotePageWrapperTemplate = ({children}: PageProps) => {
+const NotePageWrapperTemplate = ({children, ...props}: PageProps) => {
 return (
-    <REPLACEME>
+    <REPLACEME<NotePageWrapperProps>
+            {...props}
+            toc={MdxNoteTocTemplate}
+        >
             {children}
     </REPLACEME>
 )

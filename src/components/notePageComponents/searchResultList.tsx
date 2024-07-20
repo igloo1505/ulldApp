@@ -6,7 +6,7 @@ import REPLACEME from "../REPLACEMEcomponent";
 export interface PageProps extends NoteTypeSearchResultListProps { }
 
 const NoteTypeSearchResultTemplate = (props: PageProps) => {
-    return <REPLACEME {...props} />;
+    return <REPLACEME<NoteTypeSearchResultListProps> {...props} />;
 };
 
 NoteTypeSearchResultTemplate.displayName = "NoteTypeSearchResultTemplate";
