@@ -1,18 +1,9 @@
-import { UnifiedMdxParserParams } from "@ulld/utilities/types";
-import { mdxParserList } from "./mdxParsers";
+import { UnifiedMdxParser } from "@ulld/api/types";
+import  mdxParserList  from "./parserLists/mdx";
+import { applyRecursiveMdxParsers } from "@ulld/api/applyRecursiveMdxParser";
 
-export const unifiedMdxParser = async (
-    props: UnifiedMdxParserParams,
-): Promise<string> => {
-    let content = props.content;
-
-    for await (const parser of mdxParserList) {
-        let newContent = await parser({
-            ...props,
-            content: content,
-        });
-        content = newContent;
-    }
-
-    return content;
+export const unifiedMdxParser: UnifiedMdxParser = async (
+    props
+) => {
+    return await applyRecursiveMdxParsers(props, mdxParserList)
 };
