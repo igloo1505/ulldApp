@@ -1,4 +1,7 @@
-import {OnRestoreMethod} from "@ulld/types"
+import { OutputMethods } from "@ulld/configschema/types";
 
 
-export const restoreMethods: OnRestoreMethod[] = []
+const restoreMethods:OutputMethods<any, "onRestore"> = []
+
+
+export default restoreMethods

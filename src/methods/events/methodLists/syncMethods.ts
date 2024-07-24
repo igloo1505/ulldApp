@@ -1,3 +1,5 @@
-import { EventMethods } from "@ulld/configschema/types";
+import { OutputMethods } from "@ulld/configschema/types";
 
-export const onSyncMethods: EventMethods<any>["onSync"][] = [];
+const onSyncMethods: OutputMethods<any, "onSync"> = [];
+
+export default onSyncMethods

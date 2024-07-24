@@ -108,6 +108,7 @@
         "remark-parse": "^11.0.0",
         "remark-rehype": "^11.1.0",
         "shiki": "^1.1.7",
+        "superjson": "^2.2.1",
         "zod": "3.22.4"
     },
     "devDependencies": {

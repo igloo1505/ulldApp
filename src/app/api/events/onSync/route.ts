@@ -8,7 +8,7 @@ import { readAppConfig } from "@ulld/developer/readAppConfig";
 import { readBuildData } from "@ulld/developer/readBuildData";
 import { syncOptionsSchema } from "@ulld/api/schemas/syncing/syncOptions";
 import { UlldGlob } from "@ulld/utilities/glob";
-import { onSyncMethods } from "#/methods/events/methodLists/syncMethods";
+import onSyncMethods from "#/methods/events/methodLists/syncMethods";
 import { NextResponse } from "next/server";
 
 
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
         await syncAutoSettings();
         let glob = new UlldGlob(config.fsRoot);
         for await (const f of onSyncMethods) {
-            await f(opts, config, buildData, glob, _autoSettings, prisma);
+            await f.func(opts, config, buildData, glob, _autoSettings, prisma);
         }
         // await syncBib()
         await syncDirRecursively(
