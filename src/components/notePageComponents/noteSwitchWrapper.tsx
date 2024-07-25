@@ -2,11 +2,14 @@ import React from 'react'
 import { IndividualNoteSwitch } from "@ulld/ui/individualNoteSwitch";
 import { unifiedMdxParser } from '#/methods/parsers/mdxParser';
 import { SpecificNoteQueryManager } from '@ulld/api/classes/specificNoteQuery/specificNoteQueryManager';
-import { AppConfigSchemaOutput, BuildStaticDataOutput, WithFSSearchParams } from '@ulld/types';
+import { WithFSSearchParams } from '@ulld/types';
 import { notFound } from 'next/navigation';
 import appConfig from "appConfig"
 import buildData from "buildData"
 import { MdxNoteParseParams } from '@ulld/api/classes/prismaMdxRelations/mdxNote';
+import { BuildStaticDataOutput } from '@ulld/configschema/buildTypes';
+import { AppConfigSchemaOutput } from '@ulld/configschema/types';
+import { generatedComponentMap } from "#/internal/componentMap";
 
 
 interface NoteSwitchInternalWrapperProps extends WithFSSearchParams {
@@ -40,6 +43,7 @@ const NoteSwitchInternalWrapper = async ({ params, searchParams, categoryId }: N
 
     return <IndividualNoteSwitch
         {...props}
+        embeddableComponents={generatedComponentMap}
         parsers={{
             mdx: mdxParserParams
         }}
