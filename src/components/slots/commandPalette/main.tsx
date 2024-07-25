@@ -2,7 +2,6 @@
 import REPLACEME from '#/components/REPLACEMEcomponent';
 import React from 'react'
 
-
 interface CommandPaletteTemplateProps {
 
 }
