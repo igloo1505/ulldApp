@@ -1,9 +1,9 @@
-// Slot: UI/DictionaryLetterList type:component propsExtends:DictionaryLetterList
+// Slot: UI/DictionaryLetterList type:component propsExtends:DictionaryLetterListProps
 import React from "react";
-import { DictionaryLetterList } from "@ulld/ui/types";
+import { DictionaryLetterListProps } from "@ulld/ui/types";
 import REPLACEME from "#/components/REPLACEMEcomponent";
 
-const DictionaryLetterListComponentTemplate = ({ children, ...props }: DictionaryLetterList) => {
+const DictionaryLetterListComponentTemplate = ({ children, ...props }: DictionaryLetterListProps) => {
     return <REPLACEME {...props} >{children}</REPLACEME>;
 };
 
