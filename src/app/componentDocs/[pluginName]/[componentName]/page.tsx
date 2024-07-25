@@ -9,21 +9,26 @@ import MdxNoteTocTemplate from "#/components/slots/navigation/mdxNoteToc";
 
 interface ComponentDocumentationPageProps {
     params: {
-        pluginId: string;
-        componentId: string;
+        pluginName: string;
+        componentName: string;
     };
+    searchParams: {
+full?: string
+    }
 }
 
 const ComponentDocumentationPage = async ({
     params,
+    searchParams,
     ...props
 }: ComponentDocumentationPageProps) => {
-    const { pluginId, componentId } = params
+    const { pluginName, componentName } = params
+    let isFull = searchParams.full === "false" ? false : true
     let data = await getPluginDocContentByIds(
         buildData,
-        pluginId,
-        componentId,
-        true,
+        pluginName,
+        componentName,
+        isFull,
     );
     if (!data || !data.content) {
         return notFound();

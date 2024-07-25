@@ -1,6 +1,6 @@
-import { EventMethod } from "@ulld/configschema/types"
+import {  OutputMethods } from "@ulld/configschema/types"
 
-const methodList: EventMethod<any, "onBuild">[] = []
+const methodList: OutputMethods<any, "onBuild"> = []
 
 
 export default methodList

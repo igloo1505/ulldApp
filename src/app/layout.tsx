@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import "@ulld/tailwind/defaultStyles.scss";
+import "#/styles/index.scss"
 import type { Metadata } from 'next'
 import { cookies } from "next/headers";
 import React from "react";
