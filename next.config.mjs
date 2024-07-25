@@ -3,7 +3,7 @@ import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
 import fs from 'fs'
 import path from 'path'
 
-const buildDataPath = path.join(process.cwd(), "./buildUtils/buildUtilData.json")
+const buildDataPath = path.join(process.cwd(), "./ulldBuildData.json")
 
 const buildData = JSON.parse(fs.readFileSync(buildDataPath, {encoding: "utf-8"}))
 
@@ -32,15 +32,13 @@ const config = withPWA({
         ignoreBuildErrors: true, // FOR DEVELOPMENT ONLY
     },
     reactStrictMode: false,
-    transpilePackages: buildData.transpilePackages || [
+    transpilePackages: [
         "three",
         "react-three-fiber",
         "drei",
         "glsify",
         "monaco-editor",
-        "@ulld/editor",
-        "@ulld/tailwind",
-        "@ulld/full-form",
+        ...buildData.transpilePackages
     ],
     experimental: {
         // typedRoutes: true,
