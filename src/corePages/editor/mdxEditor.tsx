@@ -6,14 +6,14 @@ import REPLACEME from '#/components/REPLACEMEcomponent'
 export interface PageProps extends EditorPageContentProps {
 }
 
-const MdxEditorPage = (props: PageProps) => {
+const MdxEditorPageTemplate = (props: PageProps) => {
 return (
     <REPLACEME {...props} />
 )
 }
 
 
-MdxEditorPage.displayName = "MdxEditorPage"
+MdxEditorPageTemplate.displayName = "REPLACEME"
 
 
-export default MdxEditorPage;
+export default MdxEditorPageTemplate;

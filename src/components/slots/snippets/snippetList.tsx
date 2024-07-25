@@ -4,10 +4,10 @@ import { SnippetListProps } from "@ulld/snippets/types";
 import React from "react";
 
 
-const SnippetList = (props: SnippetListProps) => {
+const SnippetListTemplate = (props: SnippetListProps) => {
     return <REPLACEME {...props} />
 };
 
-SnippetList.displayName = "SnippetList";
+SnippetListTemplate.displayName = "REPLACEME";
 
-export default SnippetList;
+export default SnippetListTemplate;

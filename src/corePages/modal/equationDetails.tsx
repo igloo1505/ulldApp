@@ -6,10 +6,10 @@ import React from "react";
 
 export interface PageProps extends EquationDetailModalPageProps {}
 
-const EquationDetailsModalPage = (props: PageProps) => {
+const EquationDetailsModalPageTemplate = (props: PageProps) => {
     return <REPLACEME {...props} isModal={true} />;
 };
 
-EquationDetailsModalPage.displayName = "EquationDetailsModalPage";
+EquationDetailsModalPageTemplate.displayName = "REPLACEME";
 
-export default EquationDetailsModalPage;
+export default EquationDetailsModalPageTemplate;

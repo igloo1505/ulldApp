@@ -3,10 +3,10 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 import { SecondaryNavigationProps } from "@ulld/navigation/types";
 import React from "react";
 
-const SecondaryNavigation = (props: SecondaryNavigationProps) => {
+const SecondaryNavigationTemplate = (props: SecondaryNavigationProps) => {
     return <REPLACEME {...props} />
 };
 
-SecondaryNavigation.displayName = "SecondaryNavigation";
+SecondaryNavigationTemplate.displayName = "REPLACEME";
 
-export default SecondaryNavigation;
+export default SecondaryNavigationTemplate;

@@ -4,10 +4,10 @@ import React from "react";
 import { DictionaryItemProps } from "@ulld/ui/types";
 
 
-const DictionaryItem = (props: DictionaryItemProps) => {
+const DictionaryItemTemplate = (props: DictionaryItemProps) => {
     return <REPLACEME {...props} />
 };
 
-DictionaryItem.displayName = "DictionaryItem";
+DictionaryItemTemplate.displayName = "REPLACEME";
 
-export default DictionaryItem;
+export default DictionaryItemTemplate;

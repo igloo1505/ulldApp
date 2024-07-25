@@ -5,14 +5,14 @@ import React from 'react'
 
 
 
-const TaskListSearchResultComponent = (props: TaskListSearchResultsListProps) => {
+const TaskListSearchResultComponentTemplate = (props: TaskListSearchResultsListProps) => {
 return (
     <REPLACEME {...props} />
 )
 }
 
 
-TaskListSearchResultComponent.displayName = "TaskListSearchResultComponent"
+TaskListSearchResultComponentTemplate.displayName = "REPLACEME"
 
 
-export default TaskListSearchResultComponent;
+export default TaskListSearchResultComponentTemplate;

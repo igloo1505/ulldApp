@@ -4,14 +4,14 @@ import { TaskListSearchResultProps } from '@ulld/task-manager/types';
 import React from 'react'
 
 
-const TaskListSearchResult = (props: TaskListSearchResultProps) => {
+const TaskListSearchResultTemplate = (props: TaskListSearchResultProps) => {
 return (
     <REPLACEME {...props} />
 )
 }
 
 
-TaskListSearchResult.displayName = "TaskListSearchResult"
+TaskListSearchResultTemplate.displayName = "REPLACEME"
 
 
-export default TaskListSearchResult;
+export default TaskListSearchResultTemplate;

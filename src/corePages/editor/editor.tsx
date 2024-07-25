@@ -5,10 +5,10 @@ import React from "react";
 
 export interface PageProps extends MonacoPageParams {}
 
-const EditorPage = (props: PageProps) => {
+const EditorPageTemplate = (props: PageProps) => {
     return <REPLACEME {...props}/>
 };
 
-EditorPage.displayName = "EditorPage";
+EditorPageTemplate.displayName = "REPLACEME";
 
-export default EditorPage;
+export default EditorPageTemplate;

@@ -5,10 +5,10 @@ import React from "react";
 
 export interface PageProps extends EquationsPageProps {}
 
-const EquationsPage = (props: PageProps) => {
+const EquationsPageTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />;
 };
 
-EquationsPage.displayName = "EquationsPage";
+EquationsPageTemplate.displayName = "REPLACEME";
 
-export default EquationsPage;
+export default EquationsPageTemplate;

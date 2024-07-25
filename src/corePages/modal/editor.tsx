@@ -3,10 +3,10 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 import { MonacoPageParams } from "@ulld/editor/editorTypes";
 import React from "react";
 
-const EditorModalPage = (props: MonacoPageParams) => {
+const EditorModalPageTemplate = (props: MonacoPageParams) => {
     return <REPLACEME {...props} isModal={true} />;
 };
 
-EditorModalPage.displayName = "EditorModalPage";
+EditorModalPageTemplate.displayName = "REPLACEME";
 
-export default EditorModalPage;
+export default EditorModalPageTemplate;

@@ -3,10 +3,10 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 import React from "react";
 import { SnippetFilterProps } from "@ulld/snippets/types";
 
-const SnippetFilter = (props: SnippetFilterProps) => {
+const SnippetFilterTemplate = (props: SnippetFilterProps) => {
     return <REPLACEME {...props} />;
 };
 
-SnippetFilter.displayName = "SnippetFilter";
+SnippetFilterTemplate.displayName = "REPLACEME";
 
-export default SnippetFilter;
+export default SnippetFilterTemplate;

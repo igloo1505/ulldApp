@@ -4,10 +4,10 @@ import { PaginationProps } from "@ulld/ui/types";
 import React from "react";
 
 
-const PaginationGroup = (props: PaginationProps) => {
+const PaginationGroupTemplate = (props: PaginationProps) => {
     return <REPLACEME {...props} />
 };
 
-PaginationGroup.displayName = "PaginationGroup";
+PaginationGroupTemplate.displayName = "REPLACEME";
 
-export default PaginationGroup;
+export default PaginationGroupTemplate;

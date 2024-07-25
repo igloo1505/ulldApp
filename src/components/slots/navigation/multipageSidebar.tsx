@@ -4,10 +4,10 @@ import { MultipageSidebarProps } from "@ulld/navigation/types";
 import React from "react";
 
 
-const MultipageSidebar = (props: MultipageSidebarProps) => {
+const MultipageSidebarTemplate = (props: MultipageSidebarProps) => {
     return <REPLACEME {...props} />;
 };
 
-MultipageSidebar.displayName = "MultipageSidebar";
+MultipageSidebarTemplate.displayName = "REPLACEME";
 
-export default MultipageSidebar;
+export default MultipageSidebarTemplate;

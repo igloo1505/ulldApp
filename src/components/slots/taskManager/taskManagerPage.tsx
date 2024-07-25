@@ -3,7 +3,7 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 import { TaskManagerPageProps } from "@ulld/task-manager/types";
 import React from "react";
 
-const TaskManagerPage = async (
+const TaskManagerPageTemplate = async (
     props: TaskManagerPageProps,
 ) => {
 
@@ -12,6 +12,6 @@ const TaskManagerPage = async (
     />;
 };
 
-TaskManagerPage.displayName = "TaskManagerPage";
+TaskManagerPageTemplate.displayName = "REPLACEME";
 
-export default TaskManagerPage;
+export default TaskManagerPageTemplate;

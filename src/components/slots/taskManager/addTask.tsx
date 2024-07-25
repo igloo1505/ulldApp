@@ -5,10 +5,10 @@ import React from "react";
 
 export interface PageProps extends AddTaskProps {}
 
-const AddTaskModal = (props: PageProps) => {
+const AddTaskModalTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />
 };
 
-AddTaskModal.displayName = "AddTaskModal";
+AddTaskModalTemplate.displayName = "REPLACEME";
 
-export default AddTaskModal;
+export default AddTaskModalTemplate;

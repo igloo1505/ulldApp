@@ -2,10 +2,10 @@
 import React from "react";
 import { LoadingIndicatorProps } from "@ulld/ui/types";
 
-const LoadingIndicator = (props: LoadingIndicatorProps) => {
+const LoadingIndicatorTemplate = (props: LoadingIndicatorProps) => {
     return <div></div>;
 };
 
-LoadingIndicator.displayName = "LoadingIndicator";
+LoadingIndicatorTemplate.displayName = "REPLACEME";
 
-export default LoadingIndicator;
+export default LoadingIndicatorTemplate;

@@ -4,14 +4,14 @@ import { NoteSummaryProps } from '@ulld/ui/types'
 import React from 'react'
 
 
-const NoteSummaryItem = (props: NoteSummaryProps) => {
+const NoteSummaryItemTemplate = (props: NoteSummaryProps) => {
 return (
     <REPLACEME {...props} />
 )
 }
 
 
-NoteSummaryItem.displayName = "NoteSummaryItem"
+NoteSummaryItemTemplate.displayName = "REPLACEME"
 
 
-export default NoteSummaryItem;
+export default NoteSummaryItemTemplate;

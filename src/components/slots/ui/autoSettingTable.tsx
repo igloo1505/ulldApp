@@ -8,10 +8,10 @@ export interface PageProps extends AutoSettingsTableProps {
 
 }
 
-const AutoSettingsTable = (props: PageProps) => {
+const AutoSettingsTableTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />;
 };
 
-AutoSettingsTable.displayName = "AutoSettingsTable";
+AutoSettingsTableTemplate.displayName = "REPLACEME";
 
-export default AutoSettingsTable;
+export default AutoSettingsTableTemplate;

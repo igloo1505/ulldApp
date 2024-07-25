@@ -5,10 +5,10 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 
 export interface PageProps extends BibliographyPageProps { }
 
-const BibliographyPage = (props: PageProps) => {
+const BibliographyPageTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />;
 };
 
-BibliographyPage.displayName = "BibliographyPage";
+BibliographyPageTemplate.displayName = "REPLACEME";
 
-export default BibliographyPage;
+export default BibliographyPageTemplate;

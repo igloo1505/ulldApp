@@ -4,12 +4,12 @@ import { NotesSearchResultsListProps } from "@ulld/ui/types";
 import React from "react";
 
 
-const NotesSearchResultsListComponent = (
+const NotesSearchResultsListComponentTemplate = (
     props: NotesSearchResultsListProps,
 ) => {
     return <REPLACEME {...props} />
 };
 
-NotesSearchResultsListComponent.displayName = "NotesSearchResultsListComponent";
+NotesSearchResultsListComponentTemplate.displayName = "REPLACEME";
 
-export default NotesSearchResultsListComponent;
+export default NotesSearchResultsListComponentTemplate;

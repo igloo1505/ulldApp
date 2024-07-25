@@ -5,10 +5,10 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 
 export interface  PageProps extends EditorPageContentProps {}
 
-const LatexEditor = (props: PageProps) => {
+const LatexEditorTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />
 };
 
-LatexEditor.displayName = "LatexEditor";
+LatexEditorTemplate.displayName = "REPLACEME";
 
-export default LatexEditor;
+export default LatexEditorTemplate;

@@ -32,7 +32,7 @@ const NoteSwitchInternalWrapper = async ({ params, searchParams, categoryId }: N
         params,
         searchParams,
         appConfig as AppConfigSchemaOutput,
-        buildData as BuildStaticDataOutput
+        buildData as unknown as BuildStaticDataOutput
     );
 
     let mdxParserParams: MdxNoteParseParams = {

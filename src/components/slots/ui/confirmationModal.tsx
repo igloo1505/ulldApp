@@ -5,10 +5,10 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 import { ConfirmationModalProps } from "@ulld/ui/types";
 import React from "react";
 
-const ConfirmationModal = (props: ConfirmationModalProps) => {
+const ConfirmationModalTemplate = (props: ConfirmationModalProps) => {
     return <REPLACEME {...props} />;
 };
 
-ConfirmationModal.displayName = "ConfirmationModal";
+ConfirmationModalTemplate.displayName = "REPLACEME";
 
-export default ConfirmationModal;
+export default ConfirmationModalTemplate;

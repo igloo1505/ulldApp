@@ -4,10 +4,10 @@ import { NavbarComponentProps } from "@ulld/navigation/types";
 import REPLACEME from "#/components/REPLACEMEcomponent";
 
 
-const NavbarComponent = (props: NavbarComponentProps) => {
+const NavbarComponentTemplate = (props: NavbarComponentProps) => {
     return <REPLACEME {...props} />
 };
 
-NavbarComponent.displayName = "NavbarComponent";
+NavbarComponentTemplate.displayName = "REPLACEME";
 
-export default NavbarComponent;
+export default NavbarComponentTemplate;

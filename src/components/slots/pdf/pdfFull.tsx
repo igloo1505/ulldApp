@@ -7,10 +7,10 @@ export interface PageProps extends FullPdfProps {
 
 }
 
-const FullPdf = (props: PageProps) => {
+const FullPdfTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />
 };
 
-FullPdf.displayName = "FullPdf";
+FullPdfTemplate.displayName = "REPLACEME";
 
-export default FullPdf;
+export default FullPdfTemplate;

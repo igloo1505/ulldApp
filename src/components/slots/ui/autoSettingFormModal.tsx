@@ -4,14 +4,14 @@ import { AutoSettingFormModalProps } from '@ulld/ui/types';
 import React from 'react'
 
 
-const AutoSettingModal = (props: AutoSettingFormModalProps ) => {
+const AutoSettingModalTemplate = (props: AutoSettingFormModalProps ) => {
 return (
     <REPLACEME {...props} />
 )
 }
 
 
-AutoSettingModal.displayName = "AutoSettingModal"
+AutoSettingModalTemplate.displayName = "REPLACEME"
 
 
-export default AutoSettingModal;
+export default AutoSettingModalTemplate;

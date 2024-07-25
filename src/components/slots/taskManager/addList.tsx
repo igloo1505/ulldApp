@@ -5,10 +5,10 @@ import REPLACEME from "#/components/REPLACEMEcomponent";
 
 export interface PageProps extends AddTaskListProps {}
 
-const AddTaskList = (props: PageProps) => {
+const AddTaskListTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />
 };
 
-AddTaskList.displayName = "AddTaskList";
+AddTaskListTemplate.displayName = "REPLACEME";
 
-export default AddTaskList;
+export default AddTaskListTemplate;

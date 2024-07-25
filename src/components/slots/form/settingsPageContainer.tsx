@@ -7,7 +7,7 @@ import buildData from "buildData"
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 import {getPluginConfig} from "@ulld/utilities/getPluginConfig"
 import appConfig from "appConfig"
-import { AppConfigSchemaOutput } from "@ulld/types";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 interface SettingsPageContainerTemplateProps
     extends PickPageParams<SettingsPageContainerProps> {
@@ -20,7 +20,7 @@ const SettingsPageContainerTemplate = (
     {children, pluginName, ...props}: SettingsPageContainerTemplateProps,
 ) => {
     let item = getPluginConfig({ pluginName, appConfig: appConfig as AppConfigSchemaOutput })
-    const settingdata = (buildData as BuildStaticDataOutput).settingPages.find((f) => f.pluginName === pluginName)
+    const settingdata = (buildData as unknown as BuildStaticDataOutput).settingPages.find((f) => f.pluginName === pluginName)
     return <REPLACEME
         {...props}
         title={settingdata?.title || item?.label || pluginName}

@@ -4,14 +4,14 @@ import { BookmarksResultsPageProps } from '@ulld/ui/types';
 import React from 'react'
 
 
-const BookmarkResultsPage = (props: BookmarksResultsPageProps) => {
+const BookmarkResultsPageTemplate = (props: BookmarksResultsPageProps) => {
 return (
     <REPLACEME {...props} />
 )
 }
 
 
-BookmarkResultsPage.displayName = "BookmarkResultsPage"
+BookmarkResultsPageTemplate.displayName = "REPLACEME"
 
 
-export default BookmarkResultsPage;
+export default BookmarkResultsPageTemplate;

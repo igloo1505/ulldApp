@@ -5,10 +5,10 @@ import React from "react";
 
 export interface PageProps extends FullScreenNavProps {}
 
-const FullScreenNavigationMenu = (props: PageProps) => {
+const FullScreenNavigationMenuTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />;
 };
 
-FullScreenNavigationMenu.displayName = "FullScreenNavigationMenu";
+FullScreenNavigationMenuTemplate.displayName = "REPLACEME";
 
-export default FullScreenNavigationMenu;
+export default FullScreenNavigationMenuTemplate;

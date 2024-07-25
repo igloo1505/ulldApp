@@ -6,10 +6,10 @@ import React from "react";
 export interface PageProps extends TaskDetailsProps {}
 
 
-const TaskManagerTaskDetails = (props: PageProps) => {
+const TaskManagerTaskDetailsTemplate = (props: PageProps) => {
     return <REPLACEME {...props} />
 };
 
-TaskManagerTaskDetails.displayName = "TaskManagerTaskDetails";
+TaskManagerTaskDetailsTemplate.displayName = "REPLACEME";
 
-export default TaskManagerTaskDetails;
+export default TaskManagerTaskDetailsTemplate;

@@ -4,10 +4,10 @@ import React, { HTMLProps } from "react";
 
 interface LogoProps extends HTMLProps<HTMLOrSVGElement> { }
 
-const Logo = (props: LogoProps) => {
+const LogoTemplate = (props: LogoProps) => {
     return <REPLACEME {...props}/>
 };
 
-Logo.displayName = "Logo";
+LogoTemplate.displayName = "REPLACEME";
 
-export default Logo;
+export default LogoTemplate;

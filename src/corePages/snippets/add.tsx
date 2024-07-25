@@ -4,14 +4,14 @@ import { AddSnippetPageProps } from '@ulld/snippets/types'
 import React from 'react'
 
 
-const AddSnippet = (props: AddSnippetPageProps) => {
+const AddSnippetTemplate = (props: AddSnippetPageProps) => {
 return (
     <REPLACEME {...props} />
 )
 }
 
 
-AddSnippet.displayName = "AddSnippet"
+AddSnippetTemplate.displayName = "REPLACEME"
 
 
-export default AddSnippet;
+export default AddSnippetTemplate;
