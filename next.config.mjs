@@ -1,5 +1,6 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
+import { PrismaPlugin } from '@prisma/nextjs-monorepo-workaround-plugin'
 import fs from 'fs'
 import path from 'path'
 
@@ -71,6 +72,7 @@ const config = withPWA({
                     filename: "static/[name].worker.js",
                 }),
             );
+            config.plugins.push(new PrismaPlugin())
             config.module.rules.push(...monacoRules);
         }
         config.externals.push({

@@ -45,7 +45,7 @@ importers:
         specifier: ^5.15.1
         version: 5.16.1(prisma@5.16.1)
       '@prisma/nextjs-monorepo-workaround-plugin':
-        specifier: ^5.15.1
+        specifier: ^5.16.1
         version: 5.16.1
       '@reduxjs/toolkit':
         specifier: ^1.9.5
