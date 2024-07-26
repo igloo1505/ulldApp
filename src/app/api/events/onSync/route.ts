@@ -22,7 +22,7 @@ export async function POST(req: Request) {
         let config = await readAppConfig();
         let buildData = await readBuildData();
         if (opts?.cleanBeforeSync) {
-            await cleanDatabase();
+            await cleanDatabase(prisma);
         }
         const _autoSettings = await getAutoSettingsWithRegex(prisma);
         let universalMdxProps: UniversalMdxProps = {
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
             unifiedMdxParser: unifiedMdxParser,
             prisma: prisma,
         };
-        await syncAutoSettings(prisma);
+        await syncAutoSettings(prisma, config);
         let glob = new UlldGlob(config.fsRoot);
         for await (const f of onSyncMethods) {
             await f.func(opts, config, buildData, glob, _autoSettings, prisma);

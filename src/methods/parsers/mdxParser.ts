@@ -1,4 +1,4 @@
-import { UnifiedMdxParser } from "@ulld/api/types";
+import type { UnifiedMdxParser } from "@ulld/api/types";
 import  mdxParserList  from "./parserLists/mdx";
 import { applyRecursiveMdxParsers } from "@ulld/api/applyRecursiveMdxParser";
 
