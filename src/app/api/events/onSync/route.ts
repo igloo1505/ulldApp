@@ -3,14 +3,17 @@ import { cleanDatabase } from "@ulld/api/trpcInternalMethods/maintenance/cleanDa
 import { getAutoSettingsWithRegex } from "@ulld/api/trpcInternalMethods/settings/autoSettings/getAutosettingWithRegex";
 import { syncAutoSettings } from "@ulld/api/trpcInternalMethods/settings/autoSettings/syncAutoSettings";
 import { syncConfig } from "@ulld/api/trpcInternalMethods/syncing/config/syncConfig";
-import { syncDirRecursively } from "@ulld/api/trpcInternalMethods/syncing/mdx/syncDirRecursively";
+import {
+    syncDirRecursively,
+    UniversalMdxProps,
+} from "@ulld/api/trpcInternalMethods/syncing/mdx/syncDirRecursively";
 import { readAppConfig } from "@ulld/developer/readAppConfig";
 import { readBuildData } from "@ulld/developer/readBuildData";
 import { syncOptionsSchema } from "@ulld/api/schemas/syncing/syncOptions";
 import { UlldGlob } from "@ulld/utilities/glob";
 import onSyncMethods from "#/methods/events/methodLists/syncMethods";
 import { NextResponse } from "next/server";
-
+import { unifiedMdxParser } from "#/methods/parsers/mdxParser";
 
 export async function POST(req: Request) {
     let data = await req.json();
@@ -21,19 +24,22 @@ export async function POST(req: Request) {
         if (opts?.cleanBeforeSync) {
             await cleanDatabase();
         }
-        const _autoSettings = await getAutoSettingsWithRegex();
-        await syncAutoSettings();
+        const _autoSettings = await getAutoSettingsWithRegex(prisma);
+        let universalMdxProps: UniversalMdxProps = {
+            autoSettings: _autoSettings,
+            opts: opts,
+            appConfig: config,
+            buildData: buildData,
+            unifiedMdxParser: unifiedMdxParser,
+            prisma: prisma,
+        };
+        await syncAutoSettings(prisma);
         let glob = new UlldGlob(config.fsRoot);
         for await (const f of onSyncMethods) {
             await f.func(opts, config, buildData, glob, _autoSettings, prisma);
         }
         // await syncBib()
-        await syncDirRecursively(
-            config.fsRoot,
-            config.database?.removeIfNotPresentInFs || opts?.removeIfNotInFs || false,
-            _autoSettings,
-            opts,
-        );
+        await syncDirRecursively(universalMdxProps);
         await syncConfig();
         return new NextResponse(
             JSON.stringify({
