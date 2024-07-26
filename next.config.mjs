@@ -39,6 +39,8 @@ const config = withPWA({
         "drei",
         "glsify",
         "monaco-editor",
+        "@ulld/component-map",
+        "@ulld/api",
         ...buildData.transpilePackages
     ],
     experimental: {
