@@ -34,13 +34,6 @@
         "resolveJsonModule": true,
         "target": "ES2021",
         "baseUrl": ".",
-        "types": [
-            "jest",
-            "node",
-            "react",
-            "mdx",
-            "mathjax"
-        ],
         "paths": {
             "#/*": [
                 "./src/*"
