@@ -3,3 +3,7 @@ node_modules
 ulldBuildData.json
 src/app/math
 src/app/physics
+src/database/generated
+.next
+public/sw**
+public/workbox**

@@ -41,6 +41,7 @@ const config = withPWA({
         "monaco-editor",
         "@ulld/component-map",
         "@ulld/api",
+        "next-mdx-remote",
         ...buildData.transpilePackages
     ],
     experimental: {
@@ -100,7 +101,8 @@ const config = withPWA({
             };
         }
         config.module.rules.push({
-            test: /canvas\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl/,
+            // test: /canvas\.node|darwin-universal\.node|darwin-arm64\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl/, // From original app
+            test: /canvas\.node|\.csl|\.pdf|\.glb|\.gltf|\.whl/, // From website
             use: "raw-loader",
         });
         config.module.rules.push({

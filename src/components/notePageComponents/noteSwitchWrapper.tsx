@@ -14,7 +14,7 @@ import { generatedComponentMap } from "#/internal/componentMap";
 
 interface NoteSwitchInternalWrapperProps extends WithFSSearchParams {
    categoryId: string
-    params: {
+   params: {
        slug: string
     }
 }

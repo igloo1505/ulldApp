@@ -14,3 +14,10 @@ repos:
         language: script
         stages: [pre-commit]
         always_run: true
+      - id: avoidCommitIfNotTestRoot.zsh
+        name: avoidCommitIfNotTestRoot.zsh
+        entry: \./\.commitHooks/avoidCommitIfNotTestRoot.zsh
+        files: package.json
+        language: script
+        stages: [pre-commit]
+        always_run: true
