@@ -102,8 +102,7 @@ const DictionaryPageTemplate = async ({
         return (
             <DictionaryLetterList
                 letter={letter} 
-                currentPage={page ? parseInt(page) : undefined}
-                letter={letter}
+                currentPage={page ? parseInt(page) : 1}
             >
                 {sortAlphabetical<DictionaryDefinitionReturnType>(letterMap[letter], (d) => d.alphabeticalLabel || d.label || d.id).map((item, i) => {
                     return (

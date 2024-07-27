@@ -3,9 +3,11 @@ import React from "react";
 import { MdxContentSERVER } from "@ulld/render/mdx/server";
 import { getContentHeadings } from "@ulld/utilities/getMarkdownHeadings";
 import buildData from "buildData";
+import appConfig from "appConfig";
 import { getPluginDocContentByIds } from "@ulld/utilities/componentDocsPathUtils";
 import { notFound } from "next/navigation";
 import MdxNoteTocTemplate from "#/components/slots/navigation/mdxNoteToc";
+import { BuildStaticDataOutput, AppConfigSchemaOutput } from "@ulld/types";
 
 interface ComponentDocumentationPageProps {
     params: {
@@ -25,7 +27,7 @@ const ComponentDocumentationPage = async ({
     const { pluginName, componentName } = params
     let isFull = searchParams.full === "false" ? false : true
     let data = await getPluginDocContentByIds(
-        buildData,
+        buildData as unknown as BuildStaticDataOutput,
         pluginName,
         componentName,
         isFull,
@@ -40,7 +42,10 @@ const ComponentDocumentationPage = async ({
             item={data.item}
             headings={getContentHeadings(data.content)}
         >
-            <MdxContentSERVER content={data.content} />
+            <MdxContentSERVER 
+                content={data.content}
+                appConfig={appConfig as AppConfigSchemaOutput}
+            />
         </ComponentDocPageWrapperTemplate>
     );
 };

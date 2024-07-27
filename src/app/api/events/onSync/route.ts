@@ -24,7 +24,7 @@ export async function POST(req: Request) {
         if (opts?.cleanBeforeSync) {
             await cleanDatabase(prisma);
         }
-        const _autoSettings = await getAutoSettingsWithRegex(prisma);
+        const _autoSettings = await getAutoSettingsWithRegex(prisma, config);
         let universalMdxProps: UniversalMdxProps = {
             autoSettings: _autoSettings,
             opts: opts,
