@@ -1,13 +1,3 @@
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient, prisma } from "@ulld/database";
 
-const globalForPrisma = global as unknown as {
-    prisma: PrismaClient | undefined
-}
-
-export const prisma =
-    globalForPrisma.prisma ??
-    new PrismaClient({
-        log: ['error'],
-    })
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+export { prisma, PrismaClient };
