@@ -6,6 +6,7 @@
         "dev": "next dev",
         "build": "next build",
         "db:generate": "dotenv -e .env.local -- prisma generate --schema=./src/database/schema.prisma",
+        "lint": "tsc --watch --noEmit -p ./tsconfigLint.json",
         "runOnBuild": "tsx ./buildUtils/__TEMP__/runOnBuild.ts"
     },
     "prisma": {
@@ -126,7 +127,9 @@
         "@types/react": "18.2.61",
         "@types/react-dom": "18.2.19",
         "@types/three": "^0.162.0",
+        "@types/node": "^20.11.24",
         "@ulld/types": "0.0.19",
+        "@ulld/typescript-config": "0.0.18",
         "@vercel/node": "^3.1.4",
         "autoprefixer": "^10.4.19",
         "dotenv-cli": "^7.3.0",
@@ -138,6 +141,9 @@
         "tsx": "^4.10.4",
         "turbo": "^2.0.9",
         "typescript": "^5.5.4"
+    },
+    "engines": {
+        "node": ">=20"
     },
     "packageManager": "pnpm@9.4.0"
 }

@@ -1,4 +1,4 @@
-import { prisma } from "#/db";
+import { prisma } from "@ulld/database";
 import { NextResponse } from "next/server";
 import onRestoreMethods from "#/methods/events/methodLists/restoreMethods";
 import { OnRestoreReturnData } from "@ulld/types";

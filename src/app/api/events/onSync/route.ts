@@ -1,4 +1,4 @@
-import { prisma } from "#/db";
+import { prisma } from "@ulld/database";
 import { cleanDatabase } from "@ulld/api/trpcInternalMethods/maintenance/cleanDatabase";
 import { getAutoSettingsWithRegex } from "@ulld/api/trpcInternalMethods/settings/autoSettings/getAutosettingWithRegex";
 import { syncAutoSettings } from "@ulld/api/trpcInternalMethods/settings/autoSettings/syncAutoSettings";

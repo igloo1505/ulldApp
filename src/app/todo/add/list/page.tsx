@@ -1,13 +1,17 @@
 // ULLD: protected-path pageFor:taskManager/AddTaskList
-import AddTaskList from "#/components/slots/taskManager/addList";
+import AddTaskList, { PageProps } from "#/components/slots/taskManager/addList";
 import { serverClient } from "#/trpc/mainServer";
-import { UniqueTaggables } from "@ulld/utilities/types";
+import { PickPageParams } from "@ulld/utilities/types";
 import React from "react";
 
-
-const AddTaskListPageTemplate = async () => {
-    const uniqueTaggables = await serverClient.search.getUniqueTagTopicAndSubjects()
-    return <AddTaskList existingTaggables={uniqueTaggables as UniqueTaggables} isModal={false} />;
+const AddTaskListPageTemplate = async (props: PickPageParams<PageProps>) => {
+  let editing: undefined | PageProps["editing"] = undefined;
+  if (props.searchParams?.editing) {
+    editing = await serverClient.toDo.getToDoListById(
+      parseInt(props.searchParams.editing),
+    );
+  }
+  return <AddTaskList {...props} isModal={false} editing={editing} />;
 };
 
 AddTaskListPageTemplate.displayName = "AddTaskListPageTemplate";

@@ -1,7 +1,7 @@
 // ULLD: protected-path pageFor:UI/AutoSettingsTable
 import { serverClient } from "#/trpc/mainServer";
 import React from "react";
-import { AutoSettingType } from "@ulld/types";
+import { AutoSettingType } from "@ulld/utilities/types";
 import AutoSettingsTable from "#/components/slots/ui/autoSettingTable";
 import AutoSettingModal from "#/components/slots/ui/autoSettingFormModal";
 
