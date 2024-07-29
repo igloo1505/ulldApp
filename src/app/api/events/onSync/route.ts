@@ -25,6 +25,7 @@ export async function POST(req: Request) {
             await cleanDatabase(prisma);
         }
         const _autoSettings = await getAutoSettingsWithRegex(prisma, config);
+
         let universalMdxProps: UniversalMdxProps = {
             autoSettings: _autoSettings,
             opts: opts,
@@ -33,6 +34,7 @@ export async function POST(req: Request) {
             unifiedMdxParser: unifiedMdxParser,
             prisma: prisma,
         };
+
         await syncAutoSettings(prisma, config);
         let glob = new UlldGlob(config.fsRoot);
         for await (const f of onSyncMethods) {

@@ -4,12 +4,13 @@ import React from "react";
 import appConfig from "appConfig"
 import buildData from "buildData"
 import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
+import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
 
 const FullScreenNavigationModalPageTemplate = () => {
     return <FullScreenNavigationMenu
         noteTypes={(appConfig as AppConfigSchemaOutput).noteTypes}
         navConfig={(appConfig as AppConfigSchemaOutput).navigation}
-        items={buildData.navigationLinks}
+        items={(buildData as unknown as BuildStaticDataOutput).navigationLinks}
         isModal={true}
     />;
 };

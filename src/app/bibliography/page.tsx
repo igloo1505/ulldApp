@@ -5,10 +5,10 @@ import BibliographyPage, {
     PageProps,
 } from "#/corePages/bibliography/bibliography";
 import { serverClient } from "@ulld/api/serverClient";
-import { PickSearchParams } from "@ulld/utilities/types";
+import { PickPageParams } from "@ulld/utilities/types";
 import React from "react";
 
-interface BibliographyPageTemplateProps extends PickSearchParams<PageProps> { }
+interface BibliographyPageTemplateProps extends PickPageParams<PageProps> { }
 
 const BibliographyPageTemplate = async (props: BibliographyPageTemplateProps) => {
     const bib = await serverClient.bibliography.getPrismaBib()

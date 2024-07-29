@@ -5,7 +5,7 @@ import React, { HTMLProps } from "react";
 interface LogoProps extends HTMLProps<HTMLOrSVGElement> { }
 
 const LogoTemplate = (props: LogoProps) => {
-    return <REPLACEME {...props}/>
+    return <REPLACEME {...props as any}/>
 };
 
 LogoTemplate.displayName = "REPLACEME";
