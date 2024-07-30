@@ -41,6 +41,7 @@ const RootLayout = async (props: {
     })
 
     let settings = settingSchema.parse(_settings || {})
+    let plotTheme = _settings?.plotTheme ? `-${_settings.plotTheme}` : ""
 
     const preferFs = cookieJar.has("preferFs");
     let colorMode = darkMode ? "dark" : "light";
@@ -57,6 +58,7 @@ const RootLayout = async (props: {
             className={clsx(
                 "group/html js-focus-visible",
                 darkMode && "dark",
+                `plot-theme${plotTheme}`,
                 Boolean(settings && settings.tooltips === false) && "noTooltips"
             )}
             data-js-focus-visible=""
@@ -88,7 +90,9 @@ const RootLayout = async (props: {
                     config={appConfig as any}
                 >
                 <DefaultCommandPalette />
-                <DefaultConfirmationModal appConfig={appConfig as any} />
+                <DefaultConfirmationModal
+                        appConfig={appConfig as any}
+                    />
                 <BibEntryDetailSheetTemplate />
                 </StateWrappedUI>
                 <MathjaxProvider>
