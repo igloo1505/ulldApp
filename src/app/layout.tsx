@@ -40,7 +40,7 @@ const RootLayout = async (props: {
         }
     })
 
-    let settings = settingSchema.parse(_settings)
+    let settings = settingSchema.parse(_settings || {})
 
     const preferFs = cookieJar.has("preferFs");
     let colorMode = darkMode ? "dark" : "light";
@@ -77,7 +77,7 @@ const RootLayout = async (props: {
                 <Navbar
                     noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
                     navConfig={appConfig.navigation as AppConfigSchemaOutput["navigation"]}
-                    logo={Logo}
+                    logo={<Logo />}
                 />
                 <SecondaryNav 
                     noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
@@ -88,7 +88,7 @@ const RootLayout = async (props: {
                     config={appConfig as any}
                 >
                 <DefaultCommandPalette />
-                <DefaultConfirmationModal config={appConfig as any} />
+                <DefaultConfirmationModal appConfig={appConfig as any} />
                 <BibEntryDetailSheetTemplate />
                 </StateWrappedUI>
                 <MathjaxProvider>
