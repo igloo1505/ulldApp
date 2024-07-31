@@ -6,6 +6,7 @@ import { WithFSSearchParams } from '@ulld/types';
 import { notFound } from 'next/navigation';
 import appConfig from "appConfig"
 import buildData from "buildData"
+import { serverClient } from '#/trpc/mainServer';
 import { MdxNoteParseParams } from '@ulld/api/classes/prismaMdxRelations/mdxNote';
 import { BuildStaticDataOutput } from '@ulld/configschema/buildTypes';
 import { AppConfigSchemaOutput } from '@ulld/configschema/types';
@@ -34,6 +35,11 @@ const NoteSwitchInternalWrapper = async ({ params, searchParams, categoryId }: N
         appConfig as AppConfigSchemaOutput,
         buildData as unknown as BuildStaticDataOutput
     );
+
+    if(props.noteProps?.format && [".md", ".mdx"].includes(props.noteProps.format)){
+           serverClient.mdx.setMdxAccessed({rootRelativePath: props.noteProps.rootRelativePath})
+    }
+
 
     let mdxParserParams: MdxNoteParseParams = {
         appConfig: appConfig as AppConfigSchemaOutput,
