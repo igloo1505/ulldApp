@@ -8,3 +8,4 @@ src/database/generated
 public/sw**
 public/workbox**
 whenBackOnline.zsh
+.env**
