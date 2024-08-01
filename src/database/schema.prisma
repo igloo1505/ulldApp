@@ -243,6 +243,7 @@ model Settings {
     landingImageAlign     ImageAlignment @default(center)
     lockedLandingImage    String?
     cleanOnSync           Boolean        @default(false)
+    plotTheme             String         @default("blue")
     firstSync             DateTime       @default(now())
     lastSync              DateTime       @default(now()) @updatedAt
 }

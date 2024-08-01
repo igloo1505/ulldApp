@@ -7,3 +7,4 @@ src/database/generated
 .next
 public/sw**
 public/workbox**
+whenBackOnline.zsh

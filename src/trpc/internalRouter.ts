@@ -1,13 +1,9 @@
 import { router } from "@ulld/api";
-// ULLD_BUILD_PROCESS: Add exported trpc routers here.
-// import { contactsRouter } from "./routers/contacts";
+import { generatedRouter } from "./generatedRouter";
 
+export let hasGeneratedRouter = Object.keys(generatedRouter).length > 0
 
-
-export const internalTrpcRouter = router({
-    // contacts: contactsRouter
-})
-
+export const internalTrpcRouter = router(generatedRouter)
 
 
 export type InternalTrpcRouter = typeof internalTrpcRouter

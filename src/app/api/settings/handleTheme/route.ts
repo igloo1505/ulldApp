@@ -1,4 +1,3 @@
-import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { ThemeOptions } from "@ulld/tailwind/themeUtils";
 import { setThemeCookie } from "@ulld/tailwind/handleThemeCookies";
