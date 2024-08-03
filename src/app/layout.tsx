@@ -124,7 +124,7 @@ const RootLayout = async (props: {
       </head>
       <body
         className={clsx(
-          "group/body bg-background min-scrollbar border-border max-w-full overflow-x-hidden",
+          "group/body @container/body bg-background min-scrollbar border-border max-w-full overflow-x-hidden",
           fontSans.variable,
           preferFs && "preferFs",
           darkMode && "dark",
