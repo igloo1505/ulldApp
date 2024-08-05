@@ -4,6 +4,8 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
+        "dev-inspect": "NODE_OPTIONS='--inspect' next dev",
+        "dev-inspect:windows": "cross-env NODE_OPTIONS='--inspect' next dev",
         "build": "next build",
         "db:generate": "dotenv -e .env.local -- prisma generate --schema=./src/database/schema.prisma",
         "db:migrate": "dotenv -e .env.local -- prisma migrate dev --name=ulldAutoMigrate",

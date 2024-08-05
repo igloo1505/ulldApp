@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import "@ulld/tailwind/defaultStyles.scss";
 import "#/styles/index.scss";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import React from "react";
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
@@ -68,6 +68,15 @@ export const metadata: Metadata = {
     title: (appConfig as AppConfigSchemaOutput).meta.title,
     description: (appConfig as AppConfigSchemaOutput).meta.desc,
 };
+
+export const viewport: Viewport = {
+    themeColor: "#333",
+    colorScheme: "dark",
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1
+}
+
 
 const RootLayout = async (props: {
     children: React.ReactNode;
