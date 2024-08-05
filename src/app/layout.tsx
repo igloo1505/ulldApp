@@ -23,138 +23,140 @@ import { UlldColorTheme } from "@ulld/utilities/types";
 import localFont from "next/font/local";
 
 const appFont = localFont({
-  variable: "--ulld-app-font",
-  src: [
-    {
-      path: "../assets/appFont/DM_Sans/static/DMSans-Thin.ttf",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "../assets/appFont/DM_Sans/static/DMSans-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../assets/appFont/DM_Sans/static/DMSans-Light.ttf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../assets/appFont/DM_Sans/static/DMSans-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../assets/appFont/DM_Sans/static/DMSans-Italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../assets/appFont/DM_Sans/static/DMSans-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../assets/appFont/DM_Sans/static/DMSans-ExtraBold.ttf",
-      weight: "800",
-      style: "normal",
-    },
-  ],
-  display: "swap",
+    variable: "--ulld-app-font",
+    src: [
+        {
+            path: "../assets/appFont/DM_Sans/static/DMSans-Thin.ttf",
+            weight: "100",
+            style: "normal",
+        },
+        {
+            path: "../assets/appFont/DM_Sans/static/DMSans-Bold.ttf",
+            weight: "700",
+            style: "normal",
+        },
+        {
+            path: "../assets/appFont/DM_Sans/static/DMSans-Light.ttf",
+            weight: "300",
+            style: "normal",
+        },
+        {
+            path: "../assets/appFont/DM_Sans/static/DMSans-Regular.ttf",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../assets/appFont/DM_Sans/static/DMSans-Italic.ttf",
+            weight: "400",
+            style: "italic",
+        },
+        {
+            path: "../assets/appFont/DM_Sans/static/DMSans-SemiBold.ttf",
+            weight: "600",
+            style: "normal",
+        },
+        {
+            path: "../assets/appFont/DM_Sans/static/DMSans-ExtraBold.ttf",
+            weight: "800",
+            style: "normal",
+        },
+    ],
+    display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: (appConfig as AppConfigSchemaOutput).meta.title,
-  description: (appConfig as AppConfigSchemaOutput).meta.desc,
+    title: (appConfig as AppConfigSchemaOutput).meta.title,
+    description: (appConfig as AppConfigSchemaOutput).meta.desc,
 };
 
 const RootLayout = async (props: {
-  children: React.ReactNode;
-  modal: React.ReactNode;
+    children: React.ReactNode;
+    modal: React.ReactNode;
 }) => {
-  const cookieJar = cookies();
-  const darkMode = cookieJar.has("darkMode");
-  const _settings = await prisma.settings.findFirst({
-    where: {
-      id: 1,
-    },
-  });
-  let colorThemeCookie: UlldColorTheme | undefined = cookieJar.get(
-    "ulld-theme",
-  ) as UlldColorTheme | undefined;
-  if (!colorThemeCookie) {
-    colorThemeCookie = "blue";
-  }
-
-  let settings = settingSchema.parse(_settings || {});
-  let plotTheme = _settings?.plotTheme ? `-${_settings.plotTheme}` : "";
-
-  let plotThemeCookie = cookieJar.get("ulld-plot-theme");
-  if (plotThemeCookie !== settings.plotTheme) {
-    await axios.post("/api/settings/handlePlotTheme", {
-      theme: settings.plotTheme,
+    const cookieJar = cookies();
+    const darkMode = cookieJar.has("darkMode");
+    const _settings = await prisma.settings.findFirst({
+        where: {
+            id: 1,
+        },
     });
+  let colorThemeCookie = cookieJar.get(
+    "ulld-theme",
+  )
+ if (!colorThemeCookie?.value) {
+    colorThemeCookie = {name: "ulld-theme", value: "ulld"};
   }
 
-  const preferFs = cookieJar.has("preferFs");
-  let colorMode = darkMode ? "dark" : "light";
+    let settings = settingSchema.parse(_settings || {});
+    let plotTheme = _settings?.plotTheme ? `-${_settings.plotTheme}` : "";
 
-  let p = {
-    "data-theme": colorMode,
-    "data-color-mode": colorMode,
-  };
+    let plotThemeCookie = cookieJar.get("ulld-plot-theme");
+    if (plotThemeCookie !== settings.plotTheme) {
+        await axios.post("/api/settings/handlePlotTheme", {
+            theme: settings.plotTheme,
+        });
+    }
 
-  return (
-    <html
-      lang="en"
-      className={clsx(
-        "group/html overflow-x-hidden max-w-screen min-h-screen js-focus-visible border-border min-scrollbar bg-background",
-        colorMode,
-        `plot-theme${plotTheme}`,
-        Boolean(settings && settings.tooltips === false) && "noTooltips",
-        appFont.variable,
-      )}
-      data-js-focus-visible=""
-      {...p}
-    >
-      <head>
-        <link rel="icon" href="/icons/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-      </head>
-      <body
-        className={clsx(
-          "group/body @container/body bg-background min-scrollbar border-border max-w-full overflow-x-hidden",
-          fontSans.variable,
-          preferFs && "preferFs",
-          darkMode && "dark",
-        )}
-        id={`Ulld-body-root`}
-      >
-        <Navbar
-          noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
-          navConfig={
-            appConfig.navigation as AppConfigSchemaOutput["navigation"]
-          }
-          logo={<Logo />}
-        />
-        <SecondaryNav
-          noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
-          navConfig={
-            appConfig.navigation as AppConfigSchemaOutput["navigation"]
-          }
-        />
-        <StateWrappedUI settings={settings} config={appConfig as any}>
-          <DefaultCommandPalette />
-          <DefaultConfirmationModal appConfig={appConfig as any} />
-          <BibEntryDetailSheetTemplate />
-        </StateWrappedUI>
-        <MathjaxProvider>{props.children}</MathjaxProvider>
-        <Toaster />
-        {props.modal && props.modal}
-      </body>
-    </html>
-  );
+    const preferFs = cookieJar.has("preferFs");
+    let colorMode = darkMode ? "dark" : "light";
+
+    let p: Record<string, string> = {
+        "data-theme": colorMode,
+        "data-color-mode": colorMode,
+        "data-ulld-theme": colorThemeCookie.value,
+        "data-js-focus-visible": "",
+    };
+
+    return (
+        <html
+            lang="en"
+            className={clsx(
+                "group/html overflow-x-hidden max-w-screen min-h-screen js-focus-visible border-border min-scrollbar bg-background",
+                colorMode,
+                `plot-theme${plotTheme}`,
+                Boolean(settings && settings.tooltips === false) && "noTooltips",
+                appFont.variable,
+            )}
+            data-js-focus-visible=""
+            {...p}
+        >
+            <head>
+                <link rel="icon" href="/icons/favicon.ico" sizes="any" />
+                <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+            </head>
+            <body
+                className={clsx(
+                    "group/body @container/body bg-background min-scrollbar border-border max-w-full overflow-x-hidden inline",
+                    fontSans.variable,
+                    preferFs && "preferFs",
+                    darkMode && "dark",
+                )}
+                id={`Ulld-body-root`}
+            >
+                <Navbar
+                    noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
+                    navConfig={
+                        appConfig.navigation as AppConfigSchemaOutput["navigation"]
+                    }
+                    logo={<Logo />}
+                />
+                <SecondaryNav
+                    noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
+                    navConfig={
+                        appConfig.navigation as AppConfigSchemaOutput["navigation"]
+                    }
+                />
+                <StateWrappedUI settings={settings} config={appConfig as any}>
+                    <DefaultCommandPalette />
+                    <DefaultConfirmationModal appConfig={appConfig as any} />
+                    <BibEntryDetailSheetTemplate />
+                </StateWrappedUI>
+                <MathjaxProvider>{props.children}</MathjaxProvider>
+                <Toaster />
+                {props.modal && props.modal}
+            </body>
+        </html>
+    );
 };
 
 export default RootLayout;

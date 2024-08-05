@@ -16,7 +16,7 @@ export const darkModeCookie = (
   return cookies;
 };
 
-export async function Post(req: Request) {
+export async function POST(req: Request) {
   try {
     const { darkmode: param } = await req.json();
     if (param === "darkMode" || param === "noDarkMode") {
