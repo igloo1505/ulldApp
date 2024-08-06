@@ -117,7 +117,7 @@ const RootLayout = async (props: {
             lang="en"
             className={clsx(
                 "group/html overflow-x-hidden max-w-screen min-h-screen js-focus-visible border-border min-scrollbar bg-background",
-                colorMode,
+                darkMode && "dark",
                 `plot-theme${plotTheme}`,
                 Boolean(settings && settings.tooltips === false) && "noTooltips",
                 appFont.variable,
@@ -134,7 +134,6 @@ const RootLayout = async (props: {
                     "group/body @container/body bg-background min-scrollbar border-border max-w-full overflow-x-hidden inline",
                     fontSans.variable,
                     preferFs && "preferFs",
-                    darkMode && "dark",
                 )}
                 id={`Ulld-body-root`}
             >
