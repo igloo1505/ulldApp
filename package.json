@@ -78,6 +78,7 @@
         "glob": "^11.0.0",
         "gray-matter": "^4.0.3",
         "gsap": "^3.12.5",
+        "jsdom": "^23.2.0",
         "lethargy": "^1.0.9",
         "lucide-react": "^0.344.0",
         "maath": "^0.10.7",
