@@ -4,6 +4,7 @@ import React, { ReactNode } from "react";
 
 interface MathjaxProviderProps {
     children: ReactNode;
+    online: boolean
     className?: string
 }
 
@@ -14,7 +15,7 @@ declare global {
     }
 }
 
-const MathjaxProvider = ({ children, className }: MathjaxProviderProps) => {
+const MathjaxProvider = ({ children, online, className }: MathjaxProviderProps) => {
     return (
         <MathJaxContext
             config={{
@@ -34,7 +35,7 @@ const MathjaxProvider = ({ children, className }: MathjaxProviderProps) => {
                 },
             }}
             src={
-                process.env.NODE_ENV === "production"
+                online
                     ? "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
                     : "/utils/tex-chtml.js"
             }

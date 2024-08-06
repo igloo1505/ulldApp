@@ -19,7 +19,6 @@ import { AppConfigSchemaOutput } from "@ulld/configschema/zod/main";
 import Logo from "#/components/slots/ui/logo";
 import BibEntryDetailSheetTemplate from "#/components/slots/bibliography/bibEntryDetailsSheet";
 import MathjaxProvider from "#/internal/mathjaxProvider";
-import { UlldColorTheme } from "@ulld/utilities/types";
 import localFont from "next/font/local";
 
 const appFont = localFont({
@@ -74,9 +73,8 @@ export const viewport: Viewport = {
     colorScheme: "dark",
     width: "device-width",
     initialScale: 1,
-    maximumScale: 1
-}
-
+    maximumScale: 1,
+};
 
 const RootLayout = async (props: {
     children: React.ReactNode;
@@ -89,12 +87,10 @@ const RootLayout = async (props: {
             id: 1,
         },
     });
-  let colorThemeCookie = cookieJar.get(
-    "ulld-theme",
-  )
- if (!colorThemeCookie?.value) {
-    colorThemeCookie = {name: "ulld-theme", value: "ulld"};
-  }
+    let colorThemeCookie = cookieJar.get("ulld-theme");
+    if (!colorThemeCookie?.value) {
+        colorThemeCookie = { name: "ulld-theme", value: "ulld" };
+    }
 
     let settings = settingSchema.parse(_settings || {});
     let plotTheme = _settings?.plotTheme ? `-${_settings.plotTheme}` : "";
@@ -142,27 +138,35 @@ const RootLayout = async (props: {
                 )}
                 id={`Ulld-body-root`}
             >
-                <Navbar
-                    noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
-                    navConfig={
-                        appConfig.navigation as AppConfigSchemaOutput["navigation"]
-                    }
-                    logo={<Logo />}
-                />
-                <SecondaryNav
-                    noteTypes={appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]}
-                    navConfig={
-                        appConfig.navigation as AppConfigSchemaOutput["navigation"]
-                    }
-                />
-                <StateWrappedUI settings={settings} config={appConfig as any}>
-                    <DefaultCommandPalette />
-                    <DefaultConfirmationModal appConfig={appConfig as any} />
-                    <BibEntryDetailSheetTemplate />
-                </StateWrappedUI>
-                <MathjaxProvider>{props.children}</MathjaxProvider>
-                <Toaster />
-                {props.modal && props.modal}
+                <MathjaxProvider
+                    online={cookieJar.get("onlineStatus")?.value === "online"}
+                >
+                    <Navbar
+                        noteTypes={
+                            appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]
+                        }
+                        navConfig={
+                            appConfig.navigation as AppConfigSchemaOutput["navigation"]
+                        }
+                        logo={<Logo />}
+                    />
+                    <SecondaryNav
+                        noteTypes={
+                            appConfig.noteTypes as AppConfigSchemaOutput["noteTypes"]
+                        }
+                        navConfig={
+                            appConfig.navigation as AppConfigSchemaOutput["navigation"]
+                        }
+                    />
+                    <StateWrappedUI settings={settings} config={appConfig as any}>
+                        <DefaultCommandPalette />
+                        <DefaultConfirmationModal appConfig={appConfig as any} />
+                        <BibEntryDetailSheetTemplate />
+                    </StateWrappedUI>
+                    {props.children}
+                    <Toaster />
+                    {props.modal && props.modal}
+                </MathjaxProvider>
             </body>
         </html>
     );

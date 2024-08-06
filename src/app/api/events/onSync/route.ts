@@ -18,15 +18,20 @@ import { unifiedMdxParser } from "#/methods/parsers/mdxParser";
 export async function POST(req: Request) {
     let data = await req.json();
     try {
+
         let opts = syncOptionsSchema.parse(data);
+
         let config = await readAppConfig();
+
         let buildData = await readBuildData();
+
         if (opts?.cleanBeforeSync) {
             await cleanDatabase(prisma);
         }
+
         const _autoSettings = await getAutoSettingsWithRegex(prisma, config);
 
-        let universalMdxProps: UniversalMdxProps = {
+        let universalMdxProps: Omit<UniversalMdxProps, "bookmarked"> = {
             autoSettings: _autoSettings,
             opts: opts,
             appConfig: config,
@@ -38,6 +43,7 @@ export async function POST(req: Request) {
         await syncAutoSettings(prisma, config);
         let glob = new UlldGlob(config.fsRoot);
         for await (const f of onSyncMethods) {
+            console.log(`Calling ${f.pluginId} onSync method...`)
             await f.func(opts, config, buildData, glob, _autoSettings, prisma);
         }
         // await syncBib()
