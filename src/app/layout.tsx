@@ -133,6 +133,7 @@ const RootLayout = async (props: {
                 className={clsx(
                     "group/body @container/body bg-background min-scrollbar border-border max-w-full overflow-x-hidden inline",
                     fontSans.variable,
+                    darkMode && "dark",
                     preferFs && "preferFs",
                 )}
                 id={`Ulld-body-root`}
