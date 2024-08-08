@@ -1,13 +1,14 @@
 import nextPwa from "@ducanh2912/next-pwa";
 import MonacoEditorWebpackPlugin from "monaco-editor-webpack-plugin";
-import { PrismaPlugin } from '@prisma/nextjs-monorepo-workaround-plugin'
-import fs from 'fs'
-import path from 'path'
+import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
+import fs from "fs";
+import path from "path";
 
-const buildDataPath = path.join(process.cwd(), "./ulldBuildData.json")
+const buildDataPath = path.join(process.cwd(), "./ulldBuildData.json");
 
-const buildData = JSON.parse(fs.readFileSync(buildDataPath, {encoding: "utf-8"}))
-
+const buildData = JSON.parse(
+    fs.readFileSync(buildDataPath, { encoding: "utf-8" }),
+);
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -42,7 +43,7 @@ const config = withPWA({
         "@ulld/component-map",
         "@ulld/api",
         "next-mdx-remote",
-        ...buildData.transpilePackages
+        ...buildData.transpilePackages,
     ],
     experimental: {
         // typedRoutes: true,
@@ -75,7 +76,7 @@ const config = withPWA({
                     filename: "static/[name].worker.js",
                 }),
             );
-            config.plugins.push(new PrismaPlugin())
+            config.plugins.push(new PrismaPlugin());
             config.module.rules.push(...monacoRules);
         }
         config.externals.push({
@@ -87,6 +88,7 @@ const config = withPWA({
             config.resolve = {
                 ...config.resolve,
                 fallback: {
+                    ...config.resolve?.fallback,
                     net: false,
                     dns: false,
                     tls: false,
