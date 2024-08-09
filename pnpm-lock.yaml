@@ -65,6 +65,9 @@ importers:
       '@ulld/command-palette':
         specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/command-palette
         version: link:../ulld/packages/command-palette
+      '@ulld/component-configs':
+        specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/componentConfigs
+        version: link:../ulld/packages/componentConfigs
       '@ulld/component-map':
         specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/component-map
         version: link:../ulld/packages/component-map
@@ -74,6 +77,9 @@ importers:
       '@ulld/database':
         specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/database
         version: link:../ulld/packages/database
+      '@ulld/default-image-map':
+        specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/default-image-map
+        version: link:../ulld/packages/default-image-map
       '@ulld/developer':
         specifier: link:/Users/bigsexy/Desktop/current/ulld/packages/developer
         version: link:../ulld/packages/developer

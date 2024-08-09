@@ -14,6 +14,8 @@ import { UlldGlob } from "@ulld/utilities/glob";
 import onSyncMethods from "#/methods/events/methodLists/syncMethods";
 import { NextResponse } from "next/server";
 import { unifiedMdxParser } from "#/methods/parsers/mdxParser";
+import { syncBib } from "@ulld/api/trpcInternalMethods/bib/syncBib"
+
 
 export async function POST(req: Request) {
     let data = await req.json();
@@ -46,7 +48,7 @@ export async function POST(req: Request) {
             console.log(`Calling ${f.pluginId} onSync method...`)
             await f.func(opts, config, buildData, glob, _autoSettings, prisma);
         }
-        // await syncBib()
+        await syncBib(opts.bibId)
         await syncDirRecursively(universalMdxProps);
         await syncConfig();
         return new NextResponse(

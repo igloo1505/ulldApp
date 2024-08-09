@@ -1,15 +1,15 @@
-import clsx from "clsx";
+import React from "react";
 import "@ulld/tailwind/defaultStyles.scss";
 import "#/styles/index.scss";
+import clsx from "clsx";
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
-import React from "react";
 import { StateWrappedUI } from "@ulld/state/wrappers/stateWrappedUI";
 import { Toaster } from "@ulld/tailwind/toaster";
 import { fontSans } from "@ulld/tailwind/defaultFont";
 import axios from "axios";
 import appConfig from "appConfig";
-import { prisma } from "@ulld/database/db";
+import { prisma } from "@ulld/database";
 import { settingSchema } from "@ulld/parsers/settings/settingsParser";
 import Navbar from "#/components/slots/navigation/navbar";
 import SecondaryNav from "#/components/slots/navigation/secondaryNavigation";

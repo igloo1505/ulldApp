@@ -29,7 +29,6 @@ const tailwindCfg: Config = {
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
         './node_modules/fumadocs-ui/dist/**/*.js',
-        "./node_modules/@ulld/*/src/**/*.{js,ts,jsx,tsx,mdx}",
         ...buildData.tailwindSources
     ],
     theme: {

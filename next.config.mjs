@@ -59,6 +59,15 @@ const config = withPWA({
     poweredByHeader: false,
     webpack: (config, ctx) => {
         config.cache = false;
+        if(!config.plugins){
+            config.plugins = []
+        }
+        if(!config.module.rules){
+            config.module.rules = []
+        }
+        if(!config.externals){
+            config.externals = []
+        }
         if (!ctx.isServer) {
             // run only for client side
             config.plugins.push(
