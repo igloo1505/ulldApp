@@ -20,6 +20,7 @@ import Logo from "#/components/slots/ui/logo";
 import BibEntryDetailSheetTemplate from "#/components/slots/bibliography/bibEntryDetailsSheet";
 import MathjaxProvider from "#/internal/mathjaxProvider";
 import localFont from "next/font/local";
+import { seedTargetAppIfNotExists } from "@ulld/api/seedIfNotExists"
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -80,6 +81,7 @@ const RootLayout = async (props: {
     children: React.ReactNode;
     modal: React.ReactNode;
 }) => {
+    await seedTargetAppIfNotExists(appConfig as AppConfigSchemaOutput);
     const cookieJar = cookies();
     const darkMode = cookieJar.has("darkMode");
     const _settings = await prisma.settings.findFirst({

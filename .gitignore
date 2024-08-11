@@ -4,6 +4,7 @@ ulldBuildData.json
 src/app/math
 src/app/physics
 src/database/generated
+src/databaseTestData.ts
 .next
 public/sw**
 public/workbox**

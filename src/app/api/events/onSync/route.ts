@@ -19,6 +19,7 @@ import { syncBib } from "@ulld/api/trpcInternalMethods/bib/syncBib"
 
 export async function POST(req: Request) {
     let data = await req.json();
+    let errorNotifications: {errorKey: string}[] = []
     try {
 
         let opts = syncOptionsSchema.parse(data);
@@ -26,6 +27,7 @@ export async function POST(req: Request) {
         let config = await readAppConfig();
 
         let buildData = await readBuildData();
+        
 
         if (opts?.cleanBeforeSync) {
             await cleanDatabase(prisma);
@@ -48,12 +50,16 @@ export async function POST(req: Request) {
             console.log(`Calling ${f.pluginId} onSync method...`)
             await f.func(opts, config, buildData, glob, _autoSettings, prisma);
         }
-        await syncBib(opts.bibId)
+        let res = await syncBib(opts.bibId)
+        if(res && res.errorKey){
+            errorNotifications.push(res)
+        }
         await syncDirRecursively(universalMdxProps);
         await syncConfig();
         return new NextResponse(
             JSON.stringify({
                 success: true,
+                errorNotifications
             }),
             {
                 status: 200,

@@ -4,6 +4,21 @@ import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 import fs from "fs";
 import path from "path";
 
+let requiredNodeImports = {}
+
+let x = [
+            "node:events",
+            "node:promises",
+            "node:fs",
+            "node:path",
+            "node:url",
+            "node:stream",
+            "node:fs/promises",
+            "node:string_decoder",
+].forEach((x) => {
+    requiredNodeImports[x] = `commonjs2 ${x}`
+})
+
 const buildDataPath = path.join(process.cwd(), "./ulldBuildData.json");
 
 const buildData = JSON.parse(
@@ -36,12 +51,12 @@ const config = withPWA({
     reactStrictMode: false,
     transpilePackages: [
         "three",
+        "three-stdlib",
         "react-three-fiber",
+        "react-resizable-panels",
         "drei",
         "glsify",
         "monaco-editor",
-        "@ulld/component-map",
-        "@ulld/api",
         "next-mdx-remote",
         ...buildData.transpilePackages,
     ],
@@ -91,6 +106,7 @@ const config = withPWA({
         config.externals.push({
             "utf-8-validate": "commonjs utf-8-validate",
             bufferutil: "commonjs bufferutil",
+            ...requiredNodeImports
         });
         if (!ctx.isServer) {
             // config.resolve.modules.push(path.resolve("node_modules/monaco-editor"));
