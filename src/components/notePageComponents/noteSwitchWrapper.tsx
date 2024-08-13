@@ -29,7 +29,7 @@ const NoteSwitchInternalWrapper = async ({ params, searchParams, categoryId }: N
     }
 
     const props = await SpecificNoteQueryManager.formatNoteProps(
-        docTypeData.id,
+        docTypeData,
         params,
         searchParams,
         appConfig as AppConfigSchemaOutput,
