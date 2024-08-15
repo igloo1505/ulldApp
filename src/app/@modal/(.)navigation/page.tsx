@@ -11,7 +11,7 @@ const FullScreenNavigationModalPageTemplate = () => {
         noteTypes={(appConfig as AppConfigSchemaOutput).noteTypes}
         navConfig={(appConfig as AppConfigSchemaOutput).navigation}
         items={(buildData as unknown as BuildStaticDataOutput).navigationLinks}
-        isModal={true}
+        isModal
     />;
 };
 

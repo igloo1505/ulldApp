@@ -127,7 +127,7 @@
     },
     "devDependencies": {
         "@shikijs/rehype": "^1.5.2",
-        "@shikijs/transformers": "^1.6.4",
+        "@shikijs/transformers": "^1.10.1",
         "@shikijs/twoslash": "^1.5.2",
         "@tailwindcss/container-queries": "^0.1.1",
         "@tailwindcss/forms": "^0.5.7",

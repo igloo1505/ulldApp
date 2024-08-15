@@ -37,7 +37,7 @@ const NoteSwitchInternalWrapper = async ({ params, searchParams, categoryId }: N
     );
 
     if(props.noteProps?.format && [".md", ".mdx"].includes(props.noteProps.format)){
-           serverClient.mdx.setMdxAccessed({rootRelativePath: props.noteProps.rootRelativePath})
+           serverClient.mdx.setMdxAccessed({rootRelativePath: props.noteProps.rootRelativePathWithExtension || `${props.noteProps.rootRelativePath}.mdx`})
     }
 
 
