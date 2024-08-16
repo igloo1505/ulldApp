@@ -4,9 +4,9 @@ import REPLACEME from '#/components/REPLACEMEcomponent';
 import { NoteDetailSheetProps } from '@ulld/navigation/types';
 
 
-const NoteDetailsSheetTemplate = (props: MdxNoteTocProps) => {
+const NoteDetailsSheetTemplate = (props: NoteDetailSheetProps) => {
 return (
-    <REPLACEME<MdxNoteTocProps>
+    <REPLACEME<NoteDetailSheetProps>
             {...props}
         />
 )

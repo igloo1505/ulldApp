@@ -11,6 +11,7 @@ import { MdxNoteParseParams } from '@ulld/api/classes/prismaMdxRelations/mdxNote
 import { BuildStaticDataOutput } from '@ulld/configschema/buildTypes';
 import { AppConfigSchemaOutput } from '@ulld/configschema/types';
 import { generatedComponentMap } from "#/internal/componentMap";
+import NoteDetailsSheetTemplate from '../slots/navigation/noteDetailSheet';
 
 
 interface NoteSwitchInternalWrapperProps extends WithFSSearchParams {
@@ -40,7 +41,7 @@ const NoteSwitchInternalWrapper = async ({ params, searchParams, categoryId }: N
            serverClient.mdx.setMdxAccessed({rootRelativePath: props.noteProps.rootRelativePathWithExtension || `${props.noteProps.rootRelativePath}.mdx`})
     }
 
-
+props.preferFs
     let mdxParserParams: MdxNoteParseParams = {
         appConfig: appConfig as AppConfigSchemaOutput,
         docTypeData,
@@ -53,6 +54,11 @@ const NoteSwitchInternalWrapper = async ({ params, searchParams, categoryId }: N
         parsers={{
             mdx: mdxParserParams
         }}
+        NoteDetailSheet={(detailProps) => <NoteDetailsSheetTemplate 
+            noteProps={props.noteProps}
+            docTypeData={props.docType}
+            {...detailProps}
+        />}
     />;
 }
 

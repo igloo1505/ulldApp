@@ -6,8 +6,9 @@ import buildData from "buildData";
 import appConfig from "appConfig";
 import { getPluginDocContentByIds } from "@ulld/utilities/componentDocsPathUtils";
 import { notFound } from "next/navigation";
-import MdxNoteTocTemplate from "#/components/slots/navigation/mdxNoteToc";
-import { BuildStaticDataOutput, AppConfigSchemaOutput } from "@ulld/types";
+import NoteDetailsSheetTemplate from "#/components/slots/navigation/noteDetailSheet";
+import { BuildStaticDataOutput } from "@ulld/types";
+import { AppConfigSchemaOutput } from "@ulld/configschema/types";
 
 interface ComponentDocumentationPageProps {
     params: {
@@ -15,8 +16,8 @@ interface ComponentDocumentationPageProps {
         componentName: string;
     };
     searchParams: {
-full?: string
-    }
+        full?: string;
+    };
 }
 
 const ComponentDocumentationPage = async ({
@@ -24,8 +25,8 @@ const ComponentDocumentationPage = async ({
     searchParams,
     ...props
 }: ComponentDocumentationPageProps) => {
-    const { pluginName, componentName } = params
-    let isFull = searchParams.full === "false" ? false : true
+    const { pluginName, componentName } = params;
+    let isFull = searchParams.full === "false" ? false : true;
     let data = await getPluginDocContentByIds(
         buildData as unknown as BuildStaticDataOutput,
         pluginName,
@@ -38,11 +39,11 @@ const ComponentDocumentationPage = async ({
     return (
         <ComponentDocPageWrapperTemplate
             {...params}
-            toc={MdxNoteTocTemplate}
+            toc={NoteDetailsSheetTemplate}
             item={data.item}
             headings={getContentHeadings(data.content)}
         >
-            <MdxContentSERVER 
+            <MdxContentSERVER
                 content={data.content}
                 appConfig={appConfig as AppConfigSchemaOutput}
             />

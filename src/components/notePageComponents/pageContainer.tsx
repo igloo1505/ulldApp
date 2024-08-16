@@ -2,7 +2,7 @@
 import React from 'react'
 import REPLACEME from '../REPLACEMEcomponent';
 import { NotePageWrapperProps } from '@ulld/ui/types';
-import MdxNoteTocTemplate from '../slots/navigation/mdxNoteToc';
+import NoteDetailsSheetTemplate from '../slots/navigation/noteDetailSheet';
 
 export interface PageProps extends Omit<NotePageWrapperProps, "toc"> {}
 
@@ -10,7 +10,7 @@ const NotePageWrapperTemplate = ({children, ...props}: PageProps) => {
 return (
     <REPLACEME<NotePageWrapperProps>
             {...props}
-            toc={MdxNoteTocTemplate}
+            toc={NoteDetailsSheetTemplate}
         >
             {children}
     </REPLACEME>
