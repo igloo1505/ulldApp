@@ -3,7 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^generate"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "inputs": [".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "dev": {

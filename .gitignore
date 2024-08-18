@@ -11,3 +11,4 @@ public/workbox**
 whenBackOnline.zsh
 .env**
 src/app/api/seedTestData
+installFailOutput.json
