@@ -29,7 +29,7 @@ export async function POST(req: Request) {
         let buildData = await readBuildData();
         
 
-        if (opts?.cleanBeforeSync) {
+        if (opts?.cleanBeforeSync && process.env.NODE_ENV === "development") {
             await cleanDatabase(prisma);
         }
 
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
             await f.func(opts, config, buildData, glob, _autoSettings, prisma);
         }
         let res = await syncBib(opts.bibId)
-        if(res && res.errorKey){
+        if("errorKey" in res && res.errorKey){
             errorNotifications.push(res)
         }
         await syncDirRecursively(universalMdxProps);
