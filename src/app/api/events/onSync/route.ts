@@ -16,6 +16,7 @@ import { NextResponse } from "next/server";
 import { unifiedMdxParser } from "#/methods/parsers/mdxParser";
 import { syncBib } from "@ulld/api/trpcInternalMethods/bib/syncBib"
 
+export const dynamic = "force-dynamic"
 
 export async function POST(req: Request) {
     let data = await req.json();
