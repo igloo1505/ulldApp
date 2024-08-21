@@ -49,6 +49,7 @@ const config = withPWA({
         ignoreBuildErrors: true, // FOR DEVELOPMENT ONLY
     },
     reactStrictMode: false,
+    swcMinify: false,
     transpilePackages: [
         "three",
         "three-stdlib",

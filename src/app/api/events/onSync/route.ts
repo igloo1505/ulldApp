@@ -51,7 +51,7 @@ export async function POST(req: Request) {
             console.log(`Calling ${f.pluginId} onSync method...`)
             await f.func(opts, config, buildData, glob, _autoSettings, prisma);
         }
-        let res = await syncBib(opts.bibId)
+        let res = await syncBib(config, opts.bibId)
         if("errorKey" in res && res.errorKey){
             errorNotifications.push(res)
         }
