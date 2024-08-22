@@ -36,7 +36,7 @@ export async function POST(req: Request) {
 
         const _autoSettings = await getAutoSettingsWithRegex(prisma, config);
 
-        let universalMdxProps: Omit<UniversalMdxProps, "bookmarked"> = {
+        let universalMdxProps: Omit<UniversalMdxProps, "bookmarked" | "rootRelativePath"> = {
             autoSettings: _autoSettings,
             opts: opts,
             appConfig: config,

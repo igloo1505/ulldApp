@@ -21,6 +21,7 @@ import BibEntryDetailSheetTemplate from "#/components/slots/bibliography/bibEntr
 import MathjaxProvider from "#/internal/mathjaxProvider";
 import localFont from "next/font/local";
 import { seedTargetAppIfNotExists } from "@ulld/api/seedIfNotExists"
+import { getBodyClassesFromAppConfig } from "@ulld/utilities/utils-dom"
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -137,6 +138,7 @@ const RootLayout = async (props: {
                     fontSans.variable,
                     darkMode && "dark",
                     preferFs && "preferFs",
+                    getBodyClassesFromAppConfig(appConfig as AppConfigSchemaOutput)
                 )}
                 id={`Ulld-body-root`}
             >
