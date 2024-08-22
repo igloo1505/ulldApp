@@ -41,7 +41,6 @@ const NoteSwitchInternalWrapper = async ({ params, searchParams, categoryId }: N
            serverClient.mdx.setMdxAccessed({rootRelativePath: props.noteProps.rootRelativePathWithExtension || `${props.noteProps.rootRelativePath}.mdx`})
     }
 
-props.preferFs
     let mdxParserParams: MdxNoteParseParams = {
         appConfig: appConfig as AppConfigSchemaOutput,
         docTypeData,
