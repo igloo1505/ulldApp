@@ -48,7 +48,7 @@ export async function POST(req: Request) {
         await syncAutoSettings(prisma, config);
         let glob = new UlldGlob(config.fsRoot);
         for await (const f of onSyncMethods) {
-            console.log(`Calling ${f.pluginId} onSync method...`)
+            console.log(`Calling ${f.pluginId}'s onSync method...`)
             await f.func(opts, config, buildData, glob, _autoSettings, prisma);
         }
         let res = await syncBib(config, opts.bibId)
