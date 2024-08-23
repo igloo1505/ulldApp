@@ -1,9 +1,9 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import fs from "fs";
-import path from "path";
 import { readAppConfig } from "@ulld/developer/readAppConfig";
 import { getCorsHeaders, optionsMethodResponse } from "@ulld/utilities/cors";
+import { makeAbsolute } from "@ulld/utilities/pathUtilsServerSide";
 
 
 export async function GET(req: NextRequest) {
@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
         JSON.stringify({ success: false, toastError: "PDF was not found." }),
         { status: 404 },
       );
-    const fp = path.join(appConfig.fsRoot, file);
+    let fp = makeAbsolute(file, appConfig.fsRoot)
     if (!fs.existsSync(fp)) {
       return new NextResponse(
         JSON.stringify({
