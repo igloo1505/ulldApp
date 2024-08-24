@@ -4,12 +4,19 @@ import ComponentDocsListPageTemplate, {
 import React from "react";
 import buildData from "buildData";
 import { BuildStaticDataOutput } from "@ulld/configschema/buildTypes";
+import { DisableBookmark } from "@ulld/utilities/disableBookmark";
 
 interface ComponentDocsListPageProps extends PageProps { }
 
 const ComponentDocsListPage = (props: ComponentDocsListPageProps) => {
     return (
-        <ComponentDocsListPageTemplate {...props} items={(buildData as unknown as BuildStaticDataOutput).componentDocs} />
+        <>
+            <DisableBookmark />
+            <ComponentDocsListPageTemplate
+                {...props}
+                items={(buildData as unknown as BuildStaticDataOutput).componentDocs}
+            />
+        </>
     );
 };
 

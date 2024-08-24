@@ -1,5 +1,6 @@
 import MultipageSidebar from "#/components/slots/navigation/multipageSidebar";
 import { Separator } from "@ulld/tailwind/separator";
+import { DisableBookmark } from "@ulld/utilities/disableBookmark";
 import React, { ReactNode } from "react";
 import buildData from "buildData"
 
@@ -10,6 +11,7 @@ interface SettingsLayoutProps {
 const SettingsLayout = ({children}: SettingsLayoutProps) => {
     return (
         <div className="space-y-6 p-10 pb-16 min-h-screen-noNav">
+          <DisableBookmark />
             <div className="space-y-0.5">
                 <h2 className="text-2xl font-bold tracking-tight">Settings</h2>
             </div>

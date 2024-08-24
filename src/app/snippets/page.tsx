@@ -4,6 +4,7 @@ import SnippetList from "#/components/slots/snippets/snippetList";
 import SnippetPageWrapper from "#/corePages/snippets/pageWrapper";
 import { serverClient } from "#/trpc/mainServer";
 import { snippetSchema } from "@ulld/snippets/schemas";
+import { DisableBookmark } from "@ulld/utilities/disableBookmark";
 import React from "react";
 
 interface SnippetsPageTemplateProps {
@@ -18,10 +19,13 @@ const SnippetsPageTemplate = async ({
     const snippets = snippetSchema.array().parse(_snippets);
 
     return (
-            <SnippetPageWrapper 
+        <>
+            <DisableBookmark />
+            <SnippetPageWrapper
                 list={<SnippetList snippets={snippets} searchParams={searchParams} />}
                 filter={<SnippetFilter searchParams={searchParams} />}
             />
+        </>
     );
 };
 

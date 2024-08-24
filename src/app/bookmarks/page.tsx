@@ -6,6 +6,7 @@ import { SearchAllParams } from "@ulld/utilities/types";
 import NoteSummaryItem from "#/components/slots/search/items/noteSummary";
 import appConfig from "appConfig";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { DisableBookmark } from "@ulld/utilities/disableBookmark";
 
 interface BookmarksPageProps {
     searchParams: SearchAllParams;
@@ -16,17 +17,20 @@ const BookmarksPage = async ({ searchParams }: BookmarksPageProps) => {
     const notes = await filter.getBookmarked(appConfig as AppConfigSchemaOutput);
 
     return (
-        <BookmarkResultsPage
-            notes={
-                <>
-                    {notes.map((n, i) => {
-                        return (
-                            <NoteSummaryItem index={i} item={n} searchType="bookmarked" />
-                        );
-                    })}
-                </>
-            }
-        ></BookmarkResultsPage>
+        <>
+            <DisableBookmark />
+            <BookmarkResultsPage
+                notes={
+                    <>
+                        {notes.map((n, i) => {
+                            return (
+                                <NoteSummaryItem index={i} item={n} searchType="bookmarked" />
+                            );
+                        })}
+                    </>
+                }
+            />
+        </>
     );
 };
 

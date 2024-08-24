@@ -1,11 +1,12 @@
 // ULLD: protected-path pageFor:taskManager/AddTask
+import React from "react";
 import AddTaskModal, {
     PageProps,
 } from "#/components/slots/taskManager/addTask";
 import { serverClient } from "#/trpc/mainServer";
 import { UniqueTaggables } from "@ulld/utilities/types";
 import { ArrayUtilities } from "@ulld/utilities/arrayUtilities";
-import React from "react";
+import { DisableBookmark } from "@ulld/utilities/disableBookmark";
 
 const AddTaskPageTemplate = async (props: PageProps) => {
     const uniqueTaggables =
@@ -13,12 +14,15 @@ const AddTaskPageTemplate = async (props: PageProps) => {
     const lists = await serverClient.toDo.getToDoLists();
 
     return (
-        <AddTaskModal
-            {...props}
-            isModal={false}
-            lists={ArrayUtilities.beArray(lists)}
-            existingTaggables={uniqueTaggables as UniqueTaggables}
-        />
+        <>
+            <DisableBookmark />
+            <AddTaskModal
+                {...props}
+                isModal={false}
+                lists={ArrayUtilities.beArray(lists)}
+                existingTaggables={uniqueTaggables as UniqueTaggables}
+            />
+        </>
     );
 };
 

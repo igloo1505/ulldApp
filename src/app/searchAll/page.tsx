@@ -17,6 +17,7 @@ import TaskListSearchResult from "#/components/slots/search/items/taskListSearch
 import { serverClient } from "#/trpc/mainServer";
 import appConfig from "appConfig";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { DisableBookmark } from "@ulld/utilities/disableBookmark";
 
 interface SearchAllPageTemplateProps {
     searchParams: SearchAllParams;
@@ -34,43 +35,46 @@ const SearchAllPageTemplate = async (props: SearchAllPageTemplateProps) => {
     );
 
     return (
-        <div className={"w-full relative"}>
-            <SearchResultsPage
-                notes={
-                    <NotesSearchResultsListComponent>
-                        {filter.notes.map((item, i) => (
-                            <NoteSummaryItem
-                                key={`note-${item.id}`}
-                                item={item}
-                                index={i}
-                                searchType={searchType}
-                            />
-                        ))}
-                    </NotesSearchResultsListComponent>
-                }
-                taskLists={
-                    <TaskListSearchResultComponent resultCount={taskLists.length}>
-                        {taskLists.map((t, i) => (
-                            <TaskListSearchResult
-                                item={t}
-                                index={i}
-                                totalFound={taskLists.length}
-                                key={`task-list-result-${i}`}
-                            />
-                        ))}
-                    </TaskListSearchResultComponent>
-                }
-            /* equations={[]} */
-            />
-            <PaginationGroup
-                currentPage={
-                    props.searchParams?.page ? parseInt(props.searchParams.page) : 1
-                }
-                totalItems={filter.totalFound}
-                itemsPerPage={filter.perPage}
-                hrefTemplate={`/searchAll?${sp.toString()}`}
-            />
-        </div>
+        <>
+            <DisableBookmark />
+            <div className={"w-full relative"}>
+                <SearchResultsPage
+                    notes={
+                        <NotesSearchResultsListComponent>
+                            {filter.notes.map((item, i) => (
+                                <NoteSummaryItem
+                                    key={`note-${item.id}`}
+                                    item={item}
+                                    index={i}
+                                    searchType={searchType}
+                                />
+                            ))}
+                        </NotesSearchResultsListComponent>
+                    }
+                    taskLists={
+                        <TaskListSearchResultComponent resultCount={taskLists.length}>
+                            {taskLists.map((t, i) => (
+                                <TaskListSearchResult
+                                    item={t}
+                                    index={i}
+                                    totalFound={taskLists.length}
+                                    key={`task-list-result-${i}`}
+                                />
+                            ))}
+                        </TaskListSearchResultComponent>
+                    }
+                /* equations={[]} */
+                />
+                <PaginationGroup
+                    currentPage={
+                        props.searchParams?.page ? parseInt(props.searchParams.page) : 1
+                    }
+                    totalItems={filter.totalFound}
+                    itemsPerPage={filter.perPage}
+                    hrefTemplate={`/searchAll?${sp.toString()}`}
+                />
+            </div>
+        </>
     );
 };
 

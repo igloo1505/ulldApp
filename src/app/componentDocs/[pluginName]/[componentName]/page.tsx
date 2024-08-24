@@ -9,6 +9,7 @@ import { notFound } from "next/navigation";
 import NoteDetailsSheetTemplate from "#/components/slots/navigation/noteDetailSheet";
 import { BuildStaticDataOutput } from "@ulld/types";
 import { AppConfigSchemaOutput } from "@ulld/configschema/types";
+import { DisableBookmark } from "@ulld/utilities/disableBookmark";
 
 interface ComponentDocumentationPageProps {
     params: {
@@ -37,17 +38,20 @@ const ComponentDocumentationPage = async ({
         return notFound();
     }
     return (
-        <ComponentDocPageWrapperTemplate
-            {...params}
-            toc={NoteDetailsSheetTemplate}
-            item={data.item}
-            headings={getContentHeadings(data.content)}
-        >
-            <MdxContentSERVER
-                content={data.content}
-                appConfig={appConfig as AppConfigSchemaOutput}
-            />
-        </ComponentDocPageWrapperTemplate>
+        <>
+            <DisableBookmark />
+            <ComponentDocPageWrapperTemplate
+                {...params}
+                toc={NoteDetailsSheetTemplate}
+                item={data.item}
+                headings={getContentHeadings(data.content)}
+            >
+                <MdxContentSERVER
+                    content={data.content}
+                    appConfig={appConfig as AppConfigSchemaOutput}
+                />
+            </ComponentDocPageWrapperTemplate>
+        </>
     );
 };
 

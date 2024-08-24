@@ -7,6 +7,9 @@ import {
 } from "@ulld/parsers/plugins/todos";
 import { TaskManagerPageProps } from "@ulld/task-manager/types";
 import React from "react";
+import { DisableBookmark } from "@ulld/utilities/disableBookmark";
+
+
 
 const TaskListMainPageTemplate = async (
     props: Pick<TaskManagerPageProps, "searchParams">,
@@ -15,7 +18,10 @@ const TaskListMainPageTemplate = async (
     const data = await serverClient.toDo.getToDos(sp);
     let tasks: TodoTaskOutput[] = [];
     data.todos?.forEach((l) => (tasks = tasks.concat(l.tasks)));
-    return <TaskManagerPage {...props} {...data} />;
+    return <>
+              <DisableBookmark />
+    <TaskManagerPage {...props} {...data} />
+    </>
 };
 
 TaskListMainPageTemplate.displayName = "TaskListMainPageTemplate";
