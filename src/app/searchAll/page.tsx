@@ -23,7 +23,7 @@ interface SearchAllPageTemplateProps {
     searchParams: SearchAllParams;
 }
 
-/* TODO: Handle the tasks and equations return here as well based on tags or other search methods */
+
 const SearchAllPageTemplate = async (props: SearchAllPageTemplateProps) => {
     const filter = new NoteFilter("all", props.searchParams);
     await filter.getResults(appConfig as AppConfigSchemaOutput);
