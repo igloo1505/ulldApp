@@ -21,7 +21,7 @@ import BibEntryDetailSheetTemplate from "#/components/slots/bibliography/bibEntr
 import MathjaxProvider from "#/internal/mathjaxProvider";
 import localFont from "next/font/local";
 import { seedTargetAppIfNotExists } from "@ulld/api/seedIfNotExists"
-import { getBodyClassesFromAppConfig } from "@ulld/utilities/utils-dom"
+import { getBodyClassesFromAppConfig } from "@ulld/utilities/getBodyClasses"
 
 const appFont = localFont({
     variable: "--ulld-app-font",
@@ -162,7 +162,10 @@ const RootLayout = async (props: {
                             appConfig.navigation as AppConfigSchemaOutput["navigation"]
                         }
                     />
-                    <StateWrappedUI settings={settings} config={appConfig as any}>
+                    <StateWrappedUI
+                        settings={settings}
+                        config={appConfig as any}
+                    >
                         <DefaultCommandPalette />
                         <DefaultConfirmationModal appConfig={appConfig as any} />
                         <BibEntryDetailSheetTemplate />
