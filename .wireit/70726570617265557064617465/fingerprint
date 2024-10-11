@@ -1,0 +1,1 @@
+{"fullyTracked":false,"platform":"darwin","arch":"arm64","nodeVersion":"v22.4.1","command":"pnpm syncpack format","extraArgs":[],"clean":true,"files":{},"output":[],"dependencies":{},"env":{}}

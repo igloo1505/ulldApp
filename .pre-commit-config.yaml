@@ -21,3 +21,10 @@ repos:
         language: script
         stages: [pre-commit]
         always_run: true
+      - id: formatPackageJson.zsh
+        name: formatPackageJson.zsh
+        entry: \./\.commitHooks/formatPackageJson.zsh
+        files: package.json
+        language: script
+        stages: [pre-commit]
+        always_run: true
